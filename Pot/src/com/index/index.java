@@ -1,4 +1,4 @@
-package test;
+package com.index;
 
 import java.io.IOException;
 import javax.servlet.ServletException;
@@ -8,11 +8,18 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Servlet implementation class A
+ * Servlet implementation class index
  */
-@WebServlet("/A")
-public class A extends HttpServlet {
+@WebServlet("/index")
+public class index extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+
+    /**
+     * Default constructor. 
+     */
+    public index() {
+        // TODO Auto-generated constructor stub
+    }
 
 	/**
 	 * @see HttpServlet#service(HttpServletRequest request, HttpServletResponse response)
