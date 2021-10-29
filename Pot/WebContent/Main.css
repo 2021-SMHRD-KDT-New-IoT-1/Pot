@@ -40,7 +40,7 @@
 }
    
 .intro_bg {
-    background-image:url("/img/메인이미지4\(화분\).jpg");
+    background-image:url("./img/MainImage4.jpg");
     background-size: cover;
     width: 100%;
     height: 718px;
@@ -185,7 +185,7 @@ color: rgb(0, 0, 0);
 .main_text2 {
     width: 100%;
     height: 418px;
-    background-image: url(/img/햇빛이\ 비치는\ 화분\ 3개.jpg);
+    background-image: url(./img/MainSunPlant.jpg);
 }
 
 footer {
