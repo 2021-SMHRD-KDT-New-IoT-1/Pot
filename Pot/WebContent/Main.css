@@ -1,0 +1,218 @@
+*{
+    font-family:'Noto Sans KR', sans-serif;
+    list-style : style none;
+    text-decoration: none;
+    border-collapse: collapse;
+    margin: 0px;
+    padding:0px;
+}
+.header > img {
+    width: 200px;
+    height: 200px;
+}
+ 
+.h1 {
+    font-size: 48px;
+    font-weight: 100;
+}
+.contens1 {
+    font-size: 20px;
+    font-weight: 100;
+}
+
+.contens1_bold {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.contens2 {
+    font-size: 22px;
+    font-weight: 400;
+}
+
+.contens3 {
+    font-size: 14px;
+    font-weight: 100;
+}
+.contens4 {
+    font-size: 20px;
+    font-weight:300;
+}
+   
+.intro_bg {
+    background-image:url("/img/메인이미지4\(화분\).jpg");
+    background-size: cover;
+    width: 100%;
+    height: 718px;
+}
+
+
+
+.header {
+    display: flex;
+    width: 1280px;
+    margin: auto;
+    height: 86px;
+ }
+
+.nav {
+    display: flex;
+    justify-content: flex-end;
+    width: 1280px;
+    line-height: 86px;
+}
+
+.nav > li {
+    list-style-type: none;
+    margin-left: 84px;
+    color: rgb(0, 0, 0);
+    font-size: 25px;
+    
+}
+
+.nav > li > a {
+    font-size: 24px;
+    color: rgb(0, 0, 0);
+}
+
+.amount {
+    position: relative;
+    top:-66px;
+    display: flex;
+    width: 1280px;
+    background: #fff;
+    box-shadow: 0px 0px 10px rgb(145, 255, 0.1);
+    margin: auto;
+}
+
+.amount > li {
+    list-style-type: none;
+    flex: 1;
+    height: 132px;
+  
+}
+
+.amount > li > div {
+    text-align: center;
+    margin-top: 37px;
+    height: 57px;
+}
+
+.amount > li:not(:last-child) > div {
+    border-right: 1px solid #e1e1e1;
+}
+
+.intro_text{
+    width: 100%;
+    margin: 430px auto 231px auto;
+    text-align: center;
+}
+
+.intro_text > h1,
+.intro_text > h4 {
+color: rgb(0, 0, 0);
+}
+
+.main_text0 {
+    width: 100%;
+    height: 601px;
+    margin-top: -132px;
+    background: #f1f2f3;
+}
+.main_text0 > h1{
+    padding-top: 116px;
+    text-align: center;
+}
+ 
+.main_text0 > .contens1 {
+    text-align: center;
+}
+
+.icon{
+    display: flex;
+    width: 1280px;
+    height: 302px;
+    margin: auto;
+}
+
+.icon > li{
+    list-style-type: none;
+    flex: 1;
+    background: rgb(255, 255, 255);
+    margin-top: 49px;
+    height: 302px;
+    text-align: center;
+}
+
+.icon > li > .icon_img{
+    margin-top: 36px;
+}
+
+.icon > li:not(:last-child) {
+    margin-right: 20px;
+}
+
+.icon .contens3 {
+    width: 180px;
+    margin: auto;
+    letter-spacing: -1px;
+}
+
+.main_text1 {
+    width: 100%;
+    height: 659px;
+}
+
+.main_text1 > h1 {
+    padding-top: 50px;
+    text-align: center;
+}
+.main_text1 > .contens1 {
+    text-align: center;
+}
+.service {
+    width: 1280px;
+    display: flex;
+    margin: 49px auto;
+    height: 427px;
+}
+.service > .contens2 {
+    padding: 20px;
+}
+.service > .contens2 > h2 {
+    margin-bottom: 27px;
+}
+.main_text2 {
+    width: 100%;
+    height: 418px;
+    background-image: url(/img/햇빛이\ 비치는\ 화분\ 3개.jpg);
+}
+
+footer {
+    display: flex;
+    background:#1f1f1f;
+    padding: 30px;
+}
+    
+
+footer > div:first-child {
+    flex:3;
+    text-align: center;
+    color: #fff;
+   
+}
+
+footer > div:last-child {
+    flex:9;
+    color: #fff;
+}
+
+
+    
+  
+
+    
+
+
+
+
