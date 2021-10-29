@@ -1,0 +1,121 @@
+*{
+    font-family:'Noto Sans KR', sans-serif;
+    list-style : style none;
+    text-decoration: none;
+    border-collapse: collapse;
+    margin: 0px;
+    padding:0px;
+}
+.header > img {
+    width: 200px;
+    height: 200px;
+}
+
+.header {
+    display: flex;
+    width: 1280px;
+    margin: auto;
+    height: 86px;
+}
+ .nav {
+    display: flex;
+    justify-content: flex-end;
+    width: 1280px;
+    line-height: 86px;
+}
+
+.nav > li {
+    list-style-type: none;
+    margin-left: 84px;
+    color: rgb(0, 0, 0);
+    font-size: 25px;
+}
+    
+.nav > li > a {
+    font-size: 25px;
+    color: rgb(0, 0, 0);
+}
+  
+.logo2 {
+
+width: 600px;
+height: 600px;
+margin-top: -250px;
+margin-left: 500px;
+}
+.water_sanso > h1 {
+  
+   font-size: 100px;
+   margin-left: 1300px;
+   margin-top: 50px;
+}
+.humidity {
+   font-size: 100px;
+   margin-left: 1280px;
+   margin-top: 10px;
+}
+.btn-area {
+    position: absolute;
+    margin-left: 1200px;
+    margin-top: -300px;
+}
+    
+.btn-area button {
+    width: 400px; height:  300px;
+    background:  #0062ff;
+    color: #fff;
+    font-size: 100px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+}
+.main_text2 {
+    width: 100%;
+    height: 418px;
+    background-image: url(/img/햇빛이\ 비치는\ 화분\ 3개.jpg);
+}
+
+footer {
+    display: flex;
+    background:#1f1f1f;
+    padding: 30px;
+}
+
+footer > div:first-child {
+    flex:3;
+    text-align: center;
+    color: #fff;
+}
+
+footer > div:last-child {
+    flex:9;
+    color: #fff;
+}
+    
+    
+
+
+
+
+   
+
+  
+
+    
+
+
+
+
+
+    
+    
+
+
+   
+
+
+   
+
+
+
+
