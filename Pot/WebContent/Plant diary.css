@@ -1,0 +1,95 @@
+*{
+    font-family:'Noto Sans KR', sans-serif;
+    list-style : style none;
+    text-decoration: none;
+    border-collapse: collapse;
+    margin: 0px;
+    padding:0px;
+}
+.header > img {
+    width: 200px;
+    height: 200px;
+}
+.intro_bg {
+    background-image:url("/메인이미지4\(화분\).jpg");
+    background-size: cover;
+    width: 100%;
+    height: 718px;
+}
+
+.header {
+    display: flex;
+    width: 1280px;
+    margin: auto;
+    height: 86px;
+}
+.nav {
+    display: flex;
+    justify-content: flex-end;
+    width: 1280px;
+    line-height: 86px;
+}
+.nav > li {
+    list-style-type: none;
+    margin-left: 84px;
+    color: rgb(0, 0, 0);
+    font-size: 25px;
+    
+}
+
+.nav > li > a {
+    font-size: 25px;
+    color: rgb(0, 0, 0);
+}
+
+footer {
+    display: flex;
+    background:#1f1f1f;
+    padding: 30px;
+    font-size: 16px;
+}
+
+footer > div:first-child {
+    flex:3;
+    text-align: center;
+    color: #fff;
+   
+}
+
+footer > div:last-child {
+    flex:9;
+    color: #fff;
+}
+.main_text2 {
+    width: 100%;
+    height: 418px;
+    background-image: url(/img/햇빛이\ 비치는\ 화분\ 3개.jpg);
+}
+.main_text1 {
+    width: 100%;
+    height: 659px;
+}
+
+.main_text1 > h1 {
+    padding-top: 50px;
+    text-align: center;
+}
+.main_text1 > .contens1 {
+    text-align: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
