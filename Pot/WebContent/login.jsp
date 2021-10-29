@@ -12,7 +12,7 @@
 <body>
     <section class="login-form">
         <h1>로그인하세요</h1>
-        <form acction="LoginService" method="post">
+        <form action="LoginService" method="post">
             <div class="int-area">
                 <input type="text" name="email" id="email"
                 autocomplete="off" required>
@@ -24,8 +24,7 @@
                 <label for="pw">PASSWORD</label>
             </div>
             <div class="btn-area">
-                <button id="btn"
-                type="submit">LOGIN</button>
+                <button id="btn" type="submit">LOGIN</button>
             </div>
         </form>
         <div class="caption">

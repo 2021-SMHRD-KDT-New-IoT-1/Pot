@@ -13,9 +13,10 @@ import com.model.MemberVO;
 
 @WebServlet("/LoginService")
 public class LoginService extends HttpServlet {
+	private static final long serialVersionUID = 1L;
 
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+		
 		String email = request.getParameter("email");
 		String pw = request.getParameter("pw");
 
@@ -34,12 +35,12 @@ public class LoginService extends HttpServlet {
 			
 			System.out.println("로그인 성공");
 
-			response.sendRedirect("main.html");
+			response.sendRedirect("Main.jsp");
 	
 		}else {
 			System.out.println("로그인 실패");
 			
-			response.sendRedirect("main.html");
+			response.sendRedirect("Main.jsp");
 		}
 	}
 
