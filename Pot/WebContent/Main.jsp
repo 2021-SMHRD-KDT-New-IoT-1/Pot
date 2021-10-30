@@ -1,6 +1,6 @@
 <%@page import="com.model.MemberVO"%>
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="ko">
  <head>
@@ -10,7 +10,7 @@
     
  <body>
 	<%
-		request.setCharacterEncoding("euc-kr");
+		request.setCharacterEncoding("UTF-8");
 		
 		MemberVO vo = (MemberVO)session.getAttribute("member");
 	%>
@@ -19,14 +19,14 @@
      <div class="header">
        <img src="./img/Main_logo.png">
        <ul class="nav">
-          <li><a href="#">È¨</a></li>
-          <li><a href="/Ä¶¸°´õ.html">½Ä¹° Ä¶¸°´õ</a></li>
-          <li><a href="/³ª¸¸ÀÇ ½Ä¹°ÀÏ±â.html">³ª¸¸ÀÇ ½Ä¹°ÀÏ±â</a></li>
-          <li><a href="/½Ä¹°¿ø°ÝÁ¦¾î.html">½Ä¹°¿ø°ÝÁ¦¾î</a></li>
+          <li><a href="#">ì‹ë¬¼ ë“±ë¡</a></li>
+          <li><a href="/ìº˜ë¦°ë”.html">ì‹ë¬¼ ìº˜ë¦°ë”</a></li>
+          <li><a href="/ë‚˜ë§Œì˜ ì‹ë¬¼ì¼ê¸°.html">ë‚˜ë§Œì˜ ì‹ë¬¼ì¼ê¸°</a></li>
+          <li><a href="/ì‹ë¬¼ì›ê²©ì œì–´.html">ì‹ë¬¼ì›ê²©ì œì–´</a></li>
         <%if (vo==null) { %>
-          <li><a href="login.jsp">·Î±×ÀÎ/È¸¿ø°¡ÀÔ</a></li>
+          <li><a href="login.jsp">ë¡œê·¸ì¸/íšŒì›ê°€ìž…</a></li>
 		<% } else { %>
-		  <li><a href="LogoutService">·Î±×¾Æ¿ô</a></li>
+		  <li><a href="LogoutService">ë¡œê·¸ì•„ì›ƒ</a></li>
 		<% } %>
         </ul>
       </div>
@@ -34,10 +34,10 @@
       		<%if (vo==null) { %>
 				<h2>WE MAKE POT</h1>
 			<% } else { %>
-				<h2><%=vo.getNick() %> ´ÔÀÇ</h1>
+				<h2><%=vo.getNick() %> ë‹˜ì˜</h1>
 			<% } %>
-          <h1>¼ÒÁßÇÑ ½Ä¹°À» ´õ¿í ½º¸¶Æ®ÇÏ°Ô!</h1>
-          <h4 class="contens1">³ª¸¸ÀÇ ½Ä¹°À» Å°¿öº¸¼¼¿ä!</h4>
+          <h1>ì†Œì¤‘í•œ ì‹ë¬¼ì„ ë”ìš± ìŠ¤ë§ˆíŠ¸í•˜ê²Œ!</h1>
+          <h4 class="contens1">ë‚˜ë§Œì˜ ì‹ë¬¼ì„ í‚¤ì›Œë³´ì„¸ìš”!</h4>
       </div>
     </div>
     
@@ -46,20 +46,20 @@
    <ul class="amount">
     <li>
      <div>
-      <div class= "contens1">¶È¶ÈÇÑ È­ºÐ IO-OT</div>
-      <div class= "contens2">À¥ ¿¬µ¿À¸·Î °£ÆíÇÏ°Ô ÀÛµ¿!</div>
+      <div class= "contens1">ë˜‘ë˜‘í•œ í™”ë¶„ IO-OT</div>
+      <div class= "contens2">ì›¹ ì—°ë™ìœ¼ë¡œ ê°„íŽ¸í•˜ê²Œ ìž‘ë™!</div>
      </div> 
     </li>
     <li>
      <div>
-      <div class= "contens1">LED »ó»ýºö ÀåÂø</div>
-      <div class= "contens2">½Ç³»¿¡¼­µµ ¹®Á¦¾øÀÌ~</div>
+      <div class= "contens1">LED ìƒìƒë¹” ìž¥ì°©</div>
+      <div class= "contens2">ì‹¤ë‚´ì—ì„œë„ ë¬¸ì œì—†ì´~</div>
      </div> 
     </li>
     <li>
      <div>
-      <div class= "contens1">¾Ë¾Æ¼­ ¹°À» ÁÖ´Â ¶È¶ÈÇÑ È­ºÐ</div>
-      <div class= "contens2">IO-OT´Â ¾Ë¾Æ¼­ ¹°À» ÁÝ´Ï´Ù</div>
+      <div class= "contens1">ì•Œì•„ì„œ ë¬¼ì„ ì£¼ëŠ” ë˜‘ë˜‘í•œ í™”ë¶„</div>
+      <div class= "contens2">IO-OTëŠ” ì•Œì•„ì„œ ë¬¼ì„ ì¤ë‹ˆë‹¤</div>
      </div> 
     </li>
     <li>
@@ -81,43 +81,43 @@
       <div class="icon_img">
        <img src="./img/MainG90.png">  
       </div>
-      <div class="contens1_bold">¿äÁò °·¼º</div>
-      <div class="contens3">°¨¼º ±îÁö ¶È¶ÈÇÑ È­ºÐ IO-OT´Â<br>Áý¾ÈÀ» »ç¶û½º·´°Ô ¸¸µé¾îÁÝ´Ï´Ù.</div>
+      <div class="contens1_bold">ìš”ì¦˜ ê°¬ì„±</div>
+      <div class="contens3">ê°ì„± ê¹Œì§€ ë˜‘ë˜‘í•œ í™”ë¶„ IO-OTëŠ”<br>ì§‘ì•ˆì„ ì‚¬ëž‘ìŠ¤ëŸ½ê²Œ ë§Œë“¤ì–´ì¤ë‹ˆë‹¤.</div>
    </li>
    
      <li>
          <div class="icon_img">
           <img src="./img/MainG88.png">  
          </div>
-         <div class="contens1_bold">±¸ÀÔ ÈÄ 1³â°£ ¹«»ó A/S</div>
-         <div class="contens3">°íÀå³ªµµ °ÆÁ¤ÇÏÁö¸¶¼¼¿ä 365ÀÏ A/S±â¼úÀÚ°¡ ´ë±âÁß ÀÔ´Ï´Ù.</div>  
+         <div class="contens1_bold">êµ¬ìž… í›„ 1ë…„ê°„ ë¬´ìƒ A/S</div>
+         <div class="contens3">ê³ ìž¥ë‚˜ë„ ê±±ì •í•˜ì§€ë§ˆì„¸ìš” 365ì¼ A/Sê¸°ìˆ ìžê°€ ëŒ€ê¸°ì¤‘ ìž…ë‹ˆë‹¤.</div>  
      </li>
      <li>
          <div class="icon_img">
           <img src="./img/MainG89.png">  
          </div>
-         <div class="contens1_bold">±â´Ù¸®Áö¸¶¼¼¿ä</div>
-         <div class="contens3">12½Ã ÀÌÀü ÁÖ¹®½Ã ´çÀÏ¹è¼Û!</div>  
+         <div class="contens1_bold">ê¸°ë‹¤ë¦¬ì§€ë§ˆì„¸ìš”</div>
+         <div class="contens3">12ì‹œ ì´ì „ ì£¼ë¬¸ì‹œ ë‹¹ì¼ë°°ì†¡!</div>  
      </li>
    
     </ul>
    </div>
     <div class="main_text1">
-      <h1>Å°¿öº¸¼¼¿ä!</h1>
-      <div class="contens1">³î¶ó¿î È¿°ú¸¦ °¡Á®´ÙÁÝ´Ï´Ù! </div>
+      <h1>í‚¤ì›Œë³´ì„¸ìš”!</h1>
+      <div class="contens1">ë†€ë¼ìš´ íš¨ê³¼ë¥¼ ê°€ì ¸ë‹¤ì¤ë‹ˆë‹¤! </div>
       <div class="service">
         <div class="photo1">
           <img src="./img/MainplantHoldMan.png">
         </div>
         <div class="contens4">
-          <h3>¹Ý·Á½Ä¹°ÀÇ ³î¶ó¿î È¿°ú!</h3>
-          ¾î¸°½ÃÀý ´Ùµé ÀÛÀº È­ºÐÀ» Å°¿öº» °æÇèÀÌ ÀÖÀ¸½Å°¡¿ä?<br>
-          Á¤¼ºµé¿© Å°¿î ÀÛÀº È­ºÐ¿¡¼­ Á¶½É½º·¹ ¸ð½ÀÀ» µé¾î³½ »õ½ÏÀ» º» ¸¶À½Àº ¾Æ¸¶µµ ¼³·½À¸·Î °¡µæ Ã¡À» °Ì´Ï´Ù.<br><br>
-          ÄÚ·Î³ª 19»çÅÂ ÀÌÈÄ Áý¿¡¼­ ½Ã°£À» º¸³»´Â »ç¶÷µéÀÌ ´Ã¾î³ª¸é¼­ ÀÌÁ¦´Â ¹Ý·Áµ¿¹° »Ó¸¸ÀÌ ¾Æ´Ñ '¹Ý·Á½Ä¹°'·Î ºÒ¸± Á¤µµ·Î ÀÎ±â°¡ ±ÞºÎ»ó ÇÏ¸é¼­ ¹Ý·Á½Ä¹°Àº
-          ¿ì¸®¿Í ±³°¨À» ³ª´­ ¼ö ÀÖ´Â »îÀÇ ÀÏ¿øÀ¸·Î ÀÚ¸® Àâ¾Ò½À´Ï´Ù.<br><br>
-          ¼­¿ï½Ã 1ÀÎ°¡±¸ ¾î¸£½Å 330¸íÀ» ´ë»óÀ¸·Î Á¶»ç°á°ú ¹«·Á 92%°¡ ¿ì¿ï°¨ ¹× ¿Ü·Î¿ò ÇØ¼Ò¿¡ µµ¿òÀÌ µÇ¾ú´Ù°í ´äÇß´Âµ¥¿ä,
-          ÀÌÃ³·³ ¹Ý·Á½Ä¹°Àº ½É¸®Àû ¾ÈÁ¤°¨»Ó ¾Æ´Ï¶ó Áý¾È °ø±â Á¤È­ È¿°ú ¹× ÀÎÅ×¸®¾î±îÁö ÀÏ¼®ÀÌÁ¶ÀÇ È¿°ú¸¦ °¡Á®´Ù ÁÖ´Â ¹Ý·Á½Ä¹°!
-          <strong>½º¸¶Æ®È­ºÐ 'IO-OT''·Î ÀÏ»óÀÇ Áñ°Å¿òÀ» ´À²¸º¸¼¼¿ä!</strong>
+          <h3>ë°˜ë ¤ì‹ë¬¼ì˜ ë†€ë¼ìš´ íš¨ê³¼!</h3>
+          ì–´ë¦°ì‹œì ˆ ë‹¤ë“¤ ìž‘ì€ í™”ë¶„ì„ í‚¤ì›Œë³¸ ê²½í—˜ì´ ìžˆìœ¼ì‹ ê°€ìš”?<br>
+          ì •ì„±ë“¤ì—¬ í‚¤ìš´ ìž‘ì€ í™”ë¶„ì—ì„œ ì¡°ì‹¬ìŠ¤ë ˆ ëª¨ìŠµì„ ë“¤ì–´ë‚¸ ìƒˆì‹¹ì„ ë³¸ ë§ˆìŒì€ ì•„ë§ˆë„ ì„¤ë ˜ìœ¼ë¡œ ê°€ë“ ì°¼ì„ ê²ë‹ˆë‹¤.<br><br>
+          ì½”ë¡œë‚˜ 19ì‚¬íƒœ ì´í›„ ì§‘ì—ì„œ ì‹œê°„ì„ ë³´ë‚´ëŠ” ì‚¬ëžŒë“¤ì´ ëŠ˜ì–´ë‚˜ë©´ì„œ ì´ì œëŠ” ë°˜ë ¤ë™ë¬¼ ë¿ë§Œì´ ì•„ë‹Œ 'ë°˜ë ¤ì‹ë¬¼'ë¡œ ë¶ˆë¦´ ì •ë„ë¡œ ì¸ê¸°ê°€ ê¸‰ë¶€ìƒ í•˜ë©´ì„œ ë°˜ë ¤ì‹ë¬¼ì€
+          ìš°ë¦¬ì™€ êµê°ì„ ë‚˜ëˆŒ ìˆ˜ ìžˆëŠ” ì‚¶ì˜ ì¼ì›ìœ¼ë¡œ ìžë¦¬ ìž¡ì•˜ìŠµë‹ˆë‹¤.<br><br>
+          ì„œìš¸ì‹œ 1ì¸ê°€êµ¬ ì–´ë¥´ì‹  330ëª…ì„ ëŒ€ìƒìœ¼ë¡œ ì¡°ì‚¬ê²°ê³¼ ë¬´ë ¤ 92%ê°€ ìš°ìš¸ê° ë° ì™¸ë¡œì›€ í•´ì†Œì— ë„ì›€ì´ ë˜ì—ˆë‹¤ê³  ë‹µí–ˆëŠ”ë°ìš”,
+          ì´ì²˜ëŸ¼ ë°˜ë ¤ì‹ë¬¼ì€ ì‹¬ë¦¬ì  ì•ˆì •ê°ë¿ ì•„ë‹ˆë¼ ì§‘ì•ˆ ê³µê¸° ì •í™” íš¨ê³¼ ë° ì¸í…Œë¦¬ì–´ê¹Œì§€ ì¼ì„ì´ì¡°ì˜ íš¨ê³¼ë¥¼ ê°€ì ¸ë‹¤ ì£¼ëŠ” ë°˜ë ¤ì‹ë¬¼!
+          <strong>ìŠ¤ë§ˆíŠ¸í™”ë¶„ 'IO-OT''ë¡œ ì¼ìƒì˜ ì¦ê±°ì›€ì„ ëŠê»´ë³´ì„¸ìš”!</strong>
         </div>
       </div>
                         
@@ -125,10 +125,10 @@
       <div class="main_text2"></div>
       <footer>
         <div>LOGO</div>
-        <div>CEO. ±èÅÂ¼®<br>
-          Addr. ±¤ÁÖ±¤¿ª½Ã µ¿±¸ ¿¹¼ú±æ 31-15 3Ãþ ½º¸¶Æ®ÀÎÀç°³¹ß¿ø<br>
+        <div>CEO. ê¹€íƒœì„<br>
+          Addr. ê´‘ì£¼ê´‘ì—­ì‹œ ë™êµ¬ ì˜ˆìˆ ê¸¸ 31-15 3ì¸µ ìŠ¤ë§ˆíŠ¸ì¸ìž¬ê°œë°œì›<br>
           010-0000-0000<br>
-          COPYRIGHT 2021 ¿ì¸®¸Ó¸¸µéÁ¶. ALL RIGHT RESERVED.
+          COPYRIGHT 2021 ìš°ë¦¬ë¨¸ë§Œë“¤ì¡°. ALL RIGHT RESERVED.
         </div>
       </footer>  
     </div>

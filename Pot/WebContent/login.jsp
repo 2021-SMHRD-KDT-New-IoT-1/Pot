@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -11,7 +11,7 @@
 </head>
 <body>
     <section class="login-form">
-        <h1>╥н╠вюнго╪╪©Д</h1>
+        <h1>К║°Й╥╦Л²╦М∙≤Л└╦Л ■</h1>
         <form action="LoginService" method="post">
             <div class="int-area">
                 <input type="text" name="email" id="email"
@@ -28,7 +28,7 @@
             </div>
         </form>
         <div class="caption">
-            <a href="join_member.html">х╦©Ь╟║ютго╠Б</a>
+            <a href="join_member.html">М ▄Л⌡░Й╟─Л·┘М∙≤Й╦╟</a>
         </div>
     </section>
     <script>
