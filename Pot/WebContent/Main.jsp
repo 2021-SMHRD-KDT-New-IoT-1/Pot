@@ -17,15 +17,14 @@
   <div class="wrap">
    <div class="intro_bg">
      <div class="header">
-       <img src="./img/Main_logo.png">
+      <a href="Main.jsp"><img src="./img/Main_logo.png" style="margin: 6px"></a>
        <ul class="nav">
-          <li><a href="#">식물 등록</a></li>
-          <li><a href="/캘린더.html">식물 캘린더</a></li>
-          <li><a href="/나만의 식물일기.html">나만의 식물일기</a></li>
-          <li><a href="/식물원격제어.html">식물원격제어</a></li>
         <%if (vo==null) { %>
           <li><a href="login.jsp">로그인/회원가입</a></li>
 		<% } else { %>
+          <li><a href="calendar.jsp">식물 캘린더</a></li>
+          <li><a href="/나만의 식물일기.html">나만의 식물일기</a></li>
+          <li><a href="Plant_system.jsp">식물원격제어</a></li>
 		  <li><a href="LogoutService">로그아웃</a></li>
 		<% } %>
         </ul>
