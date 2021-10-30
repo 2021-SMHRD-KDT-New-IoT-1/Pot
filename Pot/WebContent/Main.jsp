@@ -1,3 +1,6 @@
+<%@page import="com.model.MemberVO"%>
+<%@ page language="java" contentType="text/html; charset=EUC-KR"
+    pageEncoding="EUC-KR"%>
 <!DOCTYPE html>
 <html lang="ko">
  <head>
@@ -6,6 +9,11 @@
  </head>
     
  <body>
+	<%
+		request.setCharacterEncoding("euc-kr");
+		
+		MemberVO vo = (MemberVO)session.getAttribute("member");
+	%>
   <div class="wrap">
    <div class="intro_bg">
      <div class="header">
@@ -15,10 +23,19 @@
           <li><a href="/캘린더.html">식물 캘린더</a></li>
           <li><a href="/나만의 식물일기.html">나만의 식물일기</a></li>
           <li><a href="/식물원격제어.html">식물원격제어</a></li>
-          <li><a href="login.html">로그인/회원가입</a></li>
+        <%if (vo==null) { %>
+          <li><a href="login.jsp">로그인/회원가입</a></li>
+		<% } else { %>
+		  <li><a href="LogoutService">로그아웃</a></li>
+		<% } %>
         </ul>
       </div>
       <div class="intro_text">
+      		<%if (vo==null) { %>
+				<h2>WE MAKE POT</h1>
+			<% } else { %>
+				<h2><%=vo.getNick() %> 님의</h1>
+			<% } %>
           <h1>소중한 식물을 더욱 스마트하게!</h1>
           <h4 class="contens1">나만의 식물을 키워보세요!</h4>
       </div>
@@ -118,17 +135,3 @@
   </div>
 </body>
 </html>
-          
-    
-    
-       
-      
-      
-                   
-
-
-            
-             
-       
-                    
-    
