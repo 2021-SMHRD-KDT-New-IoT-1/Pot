@@ -33,7 +33,7 @@ public class JoinService extends HttpServlet {
 		if (cnt > 0) {
 			System.out.println("가입성공");
 
-			RequestDispatcher rd = request.getRequestDispatcher("Main.jsp");
+			RequestDispatcher rd = request.getRequestDispatcher("Member_Join_success.jsp");
 
 			request.setAttribute("nick", nick);
 
