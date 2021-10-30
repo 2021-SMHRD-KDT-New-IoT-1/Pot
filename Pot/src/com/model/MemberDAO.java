@@ -68,6 +68,8 @@ public class MemberDAO {
 			pst.setString(2, pw);
 			pst.setString(3, nick);
 			pst.setString(4, tel);
+			
+			System.out.println(email + " " + pw + " " +  " " + nick + " " + tel);
 
 			cnt = pst.executeUpdate();
 

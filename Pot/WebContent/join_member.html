@@ -9,9 +9,9 @@
 <body>
     <section class="login-form">
         <h1>회원가입</h1>
-        <form acction="" method="post">
+        <form action="JoinService" method="post">
             <div class="int-area">
-                <input type="text" name="id" id="id"
+                <input type="text" name="email" id="email"
                 autocomplete="off" required>
                 <label for="id">USER EMAIL</label>
             </div>
@@ -21,9 +21,15 @@
                 <label for="pw">PASSWORD</label>
             </div>
             <div class="int-area">
-                <input type="text" name="NICK NAEM" id="NICK"
+                <input type="text" name="nick" id="nick"
                 autocomplete="off" required>
                 <label for="NAME">USER NICK</label>
+            </div>
+            <div class="int-area">
+                <input type="text" name="tel" id="tel"
+                autocomplete="off" required>
+                <label for="NAME">PHONE NUMBER
+                </label>
             </div>
            
             <div class="btn-area">
@@ -35,4 +41,3 @@
 </section>
 </body>
 </html>
-
