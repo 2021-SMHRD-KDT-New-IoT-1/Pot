@@ -1,0 +1,16 @@
+body {
+    font-family:'Noto Sans KR', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: url(/img/로그인페이지.jpg) no-repeat center;
+    background-size: cover;
+}
+
+.wrapper > nav > ul {
+    text-align: center;
+    font-size: 40px;
+    list-style-type: none;
+}
+   
