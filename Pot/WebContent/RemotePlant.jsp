@@ -7,7 +7,7 @@
 <link
 	href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300&display=swap"
 	rel="stylesheet">
-<link rel="stylesheet" type="text/css" href="Plant_system.css">
+<link rel="stylesheet" type="text/css" href="RemotePlant.css">
 </head>
 <body>
 	<%
