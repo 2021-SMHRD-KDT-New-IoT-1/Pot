@@ -1,3 +1,9 @@
+<%@page import="com.model.MemberVO"%>
+<%@page import="com.model.CalendarVO"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="com.model.CalendarDAO"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -103,6 +109,26 @@
     </style>
   </head>
   <body>
+  	<%
+  	request.setCharacterEncoding("UTF-8");
+	
+	MemberVO vo = (MemberVO)session.getAttribute("member");
+  	
+	CalendarDAO dao = new CalendarDAO();
+	ArrayList<CalendarVO> al = dao.calendar();
+
+	System.out.println(al.size());
+
+	for (int i = 0; i < al.size(); i++) {
+		if (al.get(i).getState().equals("10")) {
+			al.get(i).setState("물");
+		}
+		if (al.get(i).getState().equals("20")) {
+			al.get(i).setState("LED");
+		}
+	}
+	%>
+  
     <!-- Wrapper -->
 
     <div id="wrapper">
@@ -178,6 +204,23 @@
             locale: "ko", // 한국어 설정
           });
           // calendar에 이벤트 추가
+          <%for (int i = 0; i < al.size(); i++) {%>
+			             <%for (int j = 0; i < al.size(); i++) {%>
+							calendar.addEvent({
+			              	title: "<%=al.get(i).getState()%>",
+								<%if (al.get(i).getState().equals("물")) {%>
+									start: "<%=al.get(i).getDate()%>", // 시작시간
+									end: "<%=al.get(i).getDate()%>", // 끝나는 시간
+									backgroundColor:"blue"
+						 		<%}
+								if (al.get(i).getState().equals("LED")) {%>
+									start: "<%=al.get(i).getDate()%>", // 시작시간	
+									end: "<%=al.get(i).getDate()%>", // 끝나는 시간	
+									backgroundColor:"orange"
+						 		<%}%> 
+							})				
+			            <%}%>
+		            <%}%>
 
           //String[] arr = {"test1", "test2", "test3"};
 
