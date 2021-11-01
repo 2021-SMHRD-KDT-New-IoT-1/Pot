@@ -111,20 +111,24 @@
   <body>
   	<%
   	request.setCharacterEncoding("UTF-8");
+  	
+  	String num = request.getParameter("num");
+  	
+  	System.out.println(num);
 	
 	MemberVO vo = (MemberVO)session.getAttribute("member");
   	
 	CalendarDAO dao = new CalendarDAO();
-	ArrayList<CalendarVO> al = dao.calendar();
+	ArrayList<CalendarVO> cal = dao.calendar(num);
 
-	System.out.println(al.size());
+	System.out.println(cal.size());
 
-	for (int i = 0; i < al.size(); i++) {
-		if (al.get(i).getState().equals("10")) {
-			al.get(i).setState("물");
+	for (int i = 0; i < cal.size(); i++) {
+		if (cal.get(i).getState().equals("10")) {
+			cal.get(i).setState("물");
 		}
-		if (al.get(i).getState().equals("20")) {
-			al.get(i).setState("LED");
+		if (cal.get(i).getState().equals("20")) {
+			cal.get(i).setState("LED");
 		}
 	}
 	%>
@@ -205,18 +209,18 @@
             locale: "ko", // 한국어 설정
           });
           // calendar에 이벤트 추가
-          <%for (int i = 0; i < al.size(); i++) {%>
-			             <%for (int j = 0; i < al.size(); i++) {%>
+          <%for (int i = 0; i < cal.size(); i++) {%>
+			             <%for (int j = 0; i < cal.size(); i++) {%>
 							calendar.addEvent({
-			              	title: "<%=al.get(i).getState()%>",
-								<%if (al.get(i).getState().equals("물")) {%>
-									start: "<%=al.get(i).getDate()%>", // 시작시간
-									end: "<%=al.get(i).getDate()%>", // 끝나는 시간
+			              	title: "<%=cal.get(i).getState()%>",
+								<%if (cal.get(i).getState().equals("물")) {%>
+									start: "<%=cal.get(i).getDate()%>", // 시작시간
+									end: "<%=cal.get(i).getDate()%>", // 끝나는 시간
 									backgroundColor:"blue"
 						 		<%}
-								if (al.get(i).getState().equals("LED")) {%>
-									start: "<%=al.get(i).getDate()%>", // 시작시간	
-									end: "<%=al.get(i).getDate()%>", // 끝나는 시간	
+								if (cal.get(i).getState().equals("LED")) {%>
+									start: "<%=cal.get(i).getDate()%>", // 시작시간	
+									end: "<%=cal.get(i).getDate()%>", // 끝나는 시간	
 									backgroundColor:"orange"
 						 		<%}%> 
 							})				

@@ -13,6 +13,8 @@
 		request.setCharacterEncoding("UTF-8");
 		
 		MemberVO vo = (MemberVO)session.getAttribute("member");
+		
+		
 	%>
   <div class="wrap">
    <div class="intro_bg">
@@ -23,7 +25,7 @@
           <li><a href="login.jsp">로그인/회원가입</a></li>
 		<% } else { %>
 		  <li><a href="Join_plant.jsp">식물 등록</a></li>
-          <li><a href="Calendar.jsp">식물 캘린더</a></li>
+          <li><a href="SelectPlant">식물 캘린더</a></li>
           <li><a href="PlantDiaryMain.jsp">나만의 식물일기</a></li>
           <li><a href="RemotePlant.jsp">식물원격제어</a></li>
 		  <li><a href="LogoutService">로그아웃</a></li>

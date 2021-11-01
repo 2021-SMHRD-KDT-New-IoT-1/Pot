@@ -1,3 +1,7 @@
+<%@page import="java.net.URLEncoder"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="com.model.PlantDAO"%>
+<%@page import="com.model.PlantVO"%>
 <%@page import="com.model.MemberVO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
@@ -12,9 +16,16 @@
 
 <body>
 	<%
-		request.setCharacterEncoding("UTF-8");
-
+	request.setCharacterEncoding("UTF-8");
+	
+	
 	MemberVO vo = (MemberVO) session.getAttribute("member");
+	String mem_num = vo.getMem_num();
+	/* PlantVO pvo = (PlantVO) session.getAttribute("plant"); */
+	
+	PlantDAO pdao = new PlantDAO();
+	ArrayList<PlantVO> pal = pdao.selectPlant(mem_num);
+	
 	%>
 	<div class="main2">
 		<div class="intro_bg">
@@ -52,11 +63,15 @@
 						</tr>
 					</thead>
 					<tbody>
+						<%
+						 for (PlantVO pvo:pal) {
+						%>
 						<tr>
-							<th scope="row">가을이</th>
-							<td>가을에 산 귀여운 가을이</td>
-							<td>CHOICE</td>
+							<th scope="row"><%=pvo.getPt_nick() %></th>
+							<td><%=pvo.getComment() %></td>
+							<td><a href="Calendar.jsp?num=<%=pvo.getPt_num() %>">CHOICE</a></td>
 						</tr>
+						<% } %>
 					</tbody>
 				</table>
 			</div>

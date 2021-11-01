@@ -108,7 +108,7 @@
 			</div>
 		</div>
 
-		<div class="main_text1">
+		<div class="main_text1" style="height: 500px;">
 			<div class="main_text2"></div>
 			<footer>
 				<div>LOGO</div>

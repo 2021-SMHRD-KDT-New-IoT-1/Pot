@@ -7,7 +7,7 @@
     <title>Document</title>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="login.css">
-    <script src="/img/JQUERY/jquery-3.6.0.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
 </head>
 <body>
     <section class="login-form">

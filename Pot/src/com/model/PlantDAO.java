@@ -11,8 +11,8 @@ public class PlantDAO {
 	PreparedStatement pst = null;
 	ResultSet rs = null;
 	int cnt = 0;
-	MemberVO vo = null;
-	ArrayList<MemberVO> al = null;
+	PlantVO pvo = null;
+	ArrayList<PlantVO> pal = null;
 	boolean check = false;
 
 	public void connection() {
@@ -51,7 +51,8 @@ public class PlantDAO {
 
 	// 01. 식물 등록 기능
 	public int joinPlant(String comment, String pt_nick, int mem_num) {
-
+		
+		
 		try {
 			connection();
 
@@ -75,22 +76,43 @@ public class PlantDAO {
 	}
 
 	// 02. 식물 검색 기능
-	public void selectPlant() {
-
+	public ArrayList<PlantVO> selectPlant(String mem_num) {
 		try {
+			pal = new ArrayList<PlantVO>();
 			connection();
-
-			String sql = "INSERT INTO ts_plant VALUES (TS_PLANT_SEQ.NEXTVAL, sysdate, ?, ?, ?)";
-
+			
+			int set_mem_num = Integer.parseInt(mem_num);
+			
+			String sql = "SELECT DISTINCT p.pt_num, p.pt_comment, p.pt_plant FROM ts_plant p, ts_state WHERE p.pt_num=p.pt_num AND p.mem_num= ?";
 			pst = conn.prepareStatement(sql);
 
-			cnt = pst.executeUpdate();
+			pst.setInt(1, set_mem_num);
+
+			rs = pst.executeQuery();
+
+			while (rs.next()) {
+				
+				String get_pt_num = rs.getString(1);
+				String get_pt_comment = rs.getString(2);
+				String get_pt_plant = rs.getString(3);
+//				System.out.println("데이터" + get_pt_num);
+//				System.out.println("데이터" + get_pt_comment);
+//				System.out.println("데이터" + get_pt_plant);
+//				System.out.println("데이터" + mem_num);
+				pvo = new PlantVO(get_pt_comment, get_pt_plant, mem_num, get_pt_num);
+				pal.add(pvo);
+//				System.out.println("인설트");
+			} 
 
 		} catch (Exception e) {
-			System.out.println("식물 정보 입력 실패");
 			e.printStackTrace();
+			System.out.println("조회 실패!");
 		} finally {
 			close();
 		}
+		return pal;
 	}
+	
+	// 03. 식물 선택 검색 기능
+	
 }
