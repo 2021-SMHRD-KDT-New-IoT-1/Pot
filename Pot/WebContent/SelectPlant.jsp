@@ -1,69 +1,62 @@
+<%@page import="com.model.MemberVO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="ko">
-<head>
-<meta charset="UTF-8">
-<title>Document</title>
-<link
-	href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300&display=swap"
-	rel="stylesheet">
-<link rel="stylesheet" href="login.css">
-<script src="/img/JQUERY/jquery-3.6.0.js"></script>
-<style>
-select {
-	margin-left: 100px;
-	margin-bottom: 40px;
-	text-align-last: center;
-    text-align: center;
-	width: 200px;
-	padding: .8em .5em;
-	border: 1px solid #999;
-	font-family: inherit;
-	border-radius: 0px;
-	-webkit-appearance: none;
-	-moz-appearance: none;
-	appearance: none;
-}
-
-</style>
-</head>
-<body>
-	<section class="login-form">
-		<h1>식물을 선택하세요.</h1>
-		<form action="SelectPlant" method="post">
-			<div class="int-area">
-				<select name="plant" required>
-					<option value="">식물을 선택하세요.</option>
-					<option value="학생">학생</option>
-					<option value="회사원">회사원</option>
-					<option value="기타">기타</option>
-				</select>
-			</div>
-			<div class="btn-area">
-				<button id="btn" type="submit">Select</button>
-			</div>
-		</form>
-	</section>
-	<script>
-        let id = $('#id');
-        let pw = $('#pw');
-        let btn = $('#btn');
-
-        $(btn).on('click', function() {
-            if($(id).val() == "") {
-                $(id).next('label').addClass('warning');
-                setTimeout(function() {
-                    $('label').removeClass('warning');
-                },1500);
-            }
-            else if($(pw).val() == "") {
-                $(pw).next('label').addClass('waring');
-                setTimeout(function() {
-                    $('label').removeClass('warning');
-                },1500);
-            }
-        });
-    </script>
+ <head>
+   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="Main.css">
+ </head>
+    
+ <body>
+	<%
+		request.setCharacterEncoding("UTF-8");
+		
+		MemberVO vo = (MemberVO)session.getAttribute("member");
+	%>
+  <div class="wrap">
+   <div class="intro_bg">
+     <div class="header">
+      <a href="Main.jsp"><img src="./img/Main_logo.png" style="margin: 6px"></a>
+       <ul class="nav">
+        <%if (vo==null) { %>
+          <li><a href="login.jsp">로그인/회원가입</a></li>
+		<% } else { %>
+		  <li><a href="Join_plant.jsp">식물 등록</a></li>
+          <li><a href="calendar.jsp">식물 캘린더</a></li>
+          <li><a href="PlantDiaryMain.jsp">나만의 식물일기</a></li>
+          <li><a href="RemotePlant.jsp">식물원격제어</a></li>
+		  <li><a href="LogoutService">로그아웃</a></li>
+		<% } %>
+        </ul>
+      </div>
+      <div class="intro_text">
+      		<table>
+							<caption><h2>회원관리페이지</h2></caption>
+							<tr>
+								<td>Email</td>
+								<td>HP</td>
+								<td>Address</td>
+								<td>Delete</td>						
+							</tr>
+							<tr>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td><a href="#">Delete</a></td>						
+							</tr>							
+						</table>
+      </div>
+    </div>
+      <footer>
+        <div>LOGO</div>
+        <div>CEO. 김태석<br>
+          Addr. 광주광역시 동구 예술길 31-15 3층 스마트인재개발원<br>
+          010-0000-0000<br>
+          COPYRIGHT 2021 우리머만들조. ALL RIGHT RESERVED.
+        </div>
+      </footer>  
+    </div>
+  </div>
 </body>
 </html>

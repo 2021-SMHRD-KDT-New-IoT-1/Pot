@@ -6,6 +6,8 @@
 <head>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300&display=swap" rel="stylesheet">
 <link rel="stylesheet" type="text/css" href="PlantDiaryMain.css">
+<link rel="stylesheet" type="text/css" href="media(Plantdiary).css">
+<link rel="stylesheet" type="text/css" href="style(Plantdiary).css">
 <link rel="stylesheet" type="text/css" href="Main.css">
 </head>
 
@@ -16,7 +18,7 @@
 		MemberVO vo = (MemberVO)session.getAttribute("member");
 	%>
 	<div class="main2">
-		<div class="intro_bg">
+		<div>
 			<div class="header">
 				<a href="Main.jsp"><img src="./img/Main_logo.png"
 					style="margin: 6px"></a>
