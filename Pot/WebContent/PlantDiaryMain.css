@@ -11,7 +11,7 @@
     height: 200px;
 }
 .intro_bg {
-    background-image:url("/메인이미지4\(화분\).jpg");
+    background-image:url("./img/MainImage4.jpg");
     background-size: cover;
     width: 100%;
     height: 718px;

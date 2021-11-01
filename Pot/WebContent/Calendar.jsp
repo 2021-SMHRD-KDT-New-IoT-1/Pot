@@ -1,3 +1,9 @@
+<%@page import="com.model.MemberVO"%>
+<%@page import="com.model.CalendarVO"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="com.model.CalendarDAO"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -24,6 +30,7 @@
       href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300&display=swap"
       rel="stylesheet"
     />
+     <link rel="stylesheet" type="text/css" href="Main.css">
     <style>
       /* body 스타일 */
       html,
@@ -31,7 +38,6 @@
         overflow: hidden;
         font-family: "Noto Sans KR", sans-serif;
         font-size: 16px;
-        margin-top: 10px;
         background-color: #DCFFDC;
       }
         
@@ -53,17 +59,16 @@
         height: 86px;
       }
       .header > img {
-          width: 200px;
-          height: 200px;
-          margin-left: -8px;
-          margin-top: -20px;
+          width: 167px;
+          height: 77px;
+          margin-top: 6px;
       }
 
       .nav {
         display: flex;
         justify-content: flex-end;
         width: 1280px;
-        line-height: 10px;
+        line-height: 86px;
       }
 
       .nav > li {
@@ -96,21 +101,51 @@
         color: #fff;
       }
       
+      #calendar {
+		max-width: 75%;
+		margin: 0 auto;
+	  }
+      
     </style>
   </head>
   <body>
+  	<%
+  	request.setCharacterEncoding("UTF-8");
+	
+	MemberVO vo = (MemberVO)session.getAttribute("member");
+  	
+	CalendarDAO dao = new CalendarDAO();
+	ArrayList<CalendarVO> al = dao.calendar();
+
+	System.out.println(al.size());
+
+	for (int i = 0; i < al.size(); i++) {
+		if (al.get(i).getState().equals("10")) {
+			al.get(i).setState("물");
+		}
+		if (al.get(i).getState().equals("20")) {
+			al.get(i).setState("LED");
+		}
+	}
+	%>
+  
     <!-- Wrapper -->
 
     <div id="wrapper">
       <div class="header">
-        <img src="/img/수정됨_logo.png" />
-        <ul class="nav">
-          <li><a href="/메인페이지.html">홈</a></li>
-          <li><a href="/캘린더.html">식물 캘린더</a></li>
-          <li><a href="/나만의 식물일기.html">나만의 식물일기</a></li>
-          <li><a href="/식물원격제어.html">식물원격제어</a></li>
-          <li><a href="/로그인.html">로그인/회원가입</a></li>
+          <a href="Main.jsp"><img src="./img/Main_logo.png" style="margin: 6px"></a>
+       <ul class="nav">
+        <%if (vo==null) { %>
+          <li><a href="login.jsp">로그인/회원가입</a></li>
+		<% } else { %>
+		  <li><a href="#">식물 등록</a></li>
+          <li><a href="calendar.jsp">식물 캘린더</a></li>
+          <li><a href="PlantDiaryMain.jsp">나만의 식물일기</a></li>
+          <li><a href="Plant_system.jsp">식물원격제어</a></li>
+		  <li><a href="LogoutService">로그아웃</a></li>
+		<% } %>
         </ul>
+       </div>
       </div>
 
       <!-- Menu -->
@@ -150,7 +185,7 @@
           var calendarEl = $("#calendar")[0];
           // full-calendar 생성하기
           var calendar = new FullCalendar.Calendar(calendarEl, {
-            height: "700px", // calendar 높이 설정
+            height: "750px", // calendar 높이 설정
             expandRows: true, // 화면에 맞게 높이 재설정
             slotMinTime: "07:00", // Day 캘린더에서 시작 시간
             slotMaxTime: "19:00", // Day 캘린더에서 종료 시간
@@ -170,6 +205,23 @@
             locale: "ko", // 한국어 설정
           });
           // calendar에 이벤트 추가
+          <%for (int i = 0; i < al.size(); i++) {%>
+			             <%for (int j = 0; i < al.size(); i++) {%>
+							calendar.addEvent({
+			              	title: "<%=al.get(i).getState()%>",
+								<%if (al.get(i).getState().equals("물")) {%>
+									start: "<%=al.get(i).getDate()%>", // 시작시간
+									end: "<%=al.get(i).getDate()%>", // 끝나는 시간
+									backgroundColor:"blue"
+						 		<%}
+								if (al.get(i).getState().equals("LED")) {%>
+									start: "<%=al.get(i).getDate()%>", // 시작시간	
+									end: "<%=al.get(i).getDate()%>", // 끝나는 시간	
+									backgroundColor:"orange"
+						 		<%}%> 
+							})				
+			            <%}%>
+		            <%}%>
 
           //String[] arr = {"test1", "test2", "test3"};
 
