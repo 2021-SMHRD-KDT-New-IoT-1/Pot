@@ -52,7 +52,7 @@ public class CalendarDAO {
 
 		try {
 			connection();
-			String sql = "SELECT * FROM state";
+			String sql = "SELECT * FROM ts_state";
 			pst = conn.prepareStatement(sql);
 
 			rs = pst.executeQuery();

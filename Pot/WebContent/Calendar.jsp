@@ -38,7 +38,7 @@
         overflow: hidden;
         font-family: "Noto Sans KR", sans-serif;
         font-size: 16px;
-        background-color: #DCFFDC;
+        /* background-color: #DCFFDC; */
       }
         
         
