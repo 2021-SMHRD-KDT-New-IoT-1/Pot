@@ -47,7 +47,7 @@
                 	<input type="hidden" value="<%=pt_num %>" name="pt_num" id="pt_num" autocomplete="off" required>
             	</div>
 				<div class="btn-area">
-					<button id="ledCheck" type="button" class= "btn btn-default">전송</button>
+					<button id="ledCheck" type="submit" class= "btn btn-default">전송</button>
 				</div>
 		</form>
 	</div>
