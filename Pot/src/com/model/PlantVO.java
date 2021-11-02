@@ -6,6 +6,7 @@ public class PlantVO {
 	private String pt_nick;
 	private String mem_num;
 	private String pt_num;
+	private int humidity;
 
 	// ¸Þ¼­µå
 	public PlantVO(String comment, String pt_nick, String mem_num) {
@@ -19,6 +20,11 @@ public class PlantVO {
 		this.pt_nick = pt_nick;
 		this.mem_num = mem_num;
 		this.pt_num = pt_num;
+	}
+	
+	public PlantVO(String pt_num, int humidity) {
+		this.pt_num = pt_num;
+		this.humidity = humidity;
 	}
 
 	public String getComment() {

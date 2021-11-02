@@ -113,6 +113,6 @@ public class PlantDAO {
 		return pal;
 	}
 	
-	// 03. 식물 선택 검색 기능
+	// 03. 식물 습도 기능
 	
 }
