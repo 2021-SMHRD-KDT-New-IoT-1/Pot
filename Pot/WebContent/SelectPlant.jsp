@@ -16,16 +16,14 @@
 
 <body>
 	<%
-	request.setCharacterEncoding("UTF-8");
-	
-	
+		request.setCharacterEncoding("UTF-8");
+
 	MemberVO vo = (MemberVO) session.getAttribute("member");
 	String mem_num = vo.getMem_num();
 	/* PlantVO pvo = (PlantVO) session.getAttribute("plant"); */
-	
+
 	PlantDAO pdao = new PlantDAO();
 	ArrayList<PlantVO> pal = pdao.selectPlant(mem_num);
-	
 	%>
 	<div class="main2">
 		<div class="intro_bg">
@@ -41,7 +39,7 @@
 						} else {
 					%>
 					<li><a href="Join_plant.jsp">식물 등록</a></li>
-					<li><a href="calendar.jsp">식물 캘린더</a></li>
+					<li><a href="SelectPlant">식물 캘린더</a></li>
 					<li><a href="PlantDiaryMain.jsp">나만의 식물일기</a></li>
 					<li><a href="RemotePlant.jsp">식물원격제어</a></li>
 					<li><a href="LogoutService">로그아웃</a></li>
@@ -57,21 +55,25 @@
 				<table class="type09">
 					<thead>
 						<tr>
-							<th scope="cols">NICK</th> <!-- 식물이름 -->
-							<th scope="cols">COMMENT</th> <!-- 식물정보 -->
+							<th scope="cols">NICK</th>
+							<!-- 식물이름 -->
+							<th scope="cols">COMMENT</th>
+							<!-- 식물정보 -->
 							<th scope="cols">CHOICE</th>
 						</tr>
 					</thead>
 					<tbody>
 						<%
-						 for (PlantVO pvo:pal) {
+							for (PlantVO pvo : pal) {
 						%>
 						<tr>
-							<th scope="row"><%=pvo.getPt_nick() %></th>
-							<td><%=pvo.getComment() %></td>
-							<td><a href="Calendar.jsp?num=<%=pvo.getPt_num() %>">CHOICE</a></td>
+							<th scope="row"><%=pvo.getPt_nick()%></th>
+							<td><%=pvo.getComment()%></td>
+							<td><a href="Calendar.jsp?num=<%=pvo.getPt_num()%>">CHOICE</a></td>
 						</tr>
-						<% } %>
+						<%
+							}
+						%>
 					</tbody>
 				</table>
 			</div>
