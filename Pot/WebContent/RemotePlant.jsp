@@ -37,7 +37,7 @@
 				<h1 class="humidity">100%</h1>
 				<img class="logo2" src="./img/Main_logo.png">
 				<div class="btn-area">
-					<button id="btn" type="submit" name="water_button">물주기</button>
+					<button id="ledCheck" type="button" class= "btn btn-default">전송</button>
 				</div>
 		</form>
 	</div>
