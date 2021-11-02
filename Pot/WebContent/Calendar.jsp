@@ -3,182 +3,185 @@
 <%@page import="java.util.ArrayList"%>
 <%@page import="com.model.CalendarDAO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <!-- 화면 해상도에 따라 글자 크기 대응(모바일 대응) -->
-    <meta
-      name="viewport"
-      content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"
-    />
-    <!-- jquery CDN -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <!-- fullcalendar CDN -->
-    <link
-      href="https://cdn.jsdelivr.net/npm/fullcalendar@5.8.0/main.min.css"
-      rel="stylesheet"
-    />
-    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.8.0/main.min.js"></script>
-    <!-- fullcalendar 언어 CDN -->
-    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.8.0/locales-all.min.js"></script>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300&display=swap"
-      rel="stylesheet"
-    />
-     <link rel="stylesheet" type="text/css" href="Main.css">
-    <style>
-      /* body 스타일 */
-      html,
-      body {
-        overflow: hidden;
-        font-family: "Noto Sans KR", sans-serif;
-        font-size: 16px;
-        /* background-color: #DCFFDC; */
-      }
-        
-        
+<head>
+<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Document</title>
+<!-- 화면 해상도에 따라 글자 크기 대응(모바일 대응) -->
+<meta name="viewport"
+	content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+<!-- jquery CDN -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<!-- fullcalendar CDN -->
+<link
+	href="https://cdn.jsdelivr.net/npm/fullcalendar@5.8.0/main.min.css"
+	rel="stylesheet" />
+<script
+	src="https://cdn.jsdelivr.net/npm/fullcalendar@5.8.0/main.min.js"></script>
+<!-- fullcalendar 언어 CDN -->
+<script
+	src="https://cdn.jsdelivr.net/npm/fullcalendar@5.8.0/locales-all.min.js"></script>
+<link
+	href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300&display=swap"
+	rel="stylesheet" />
+<link rel="stylesheet" type="text/css" href="Main.css">
+<style>
+/* body 스타일 */
+html, body {
+	overflow: hidden;
+	font-family: "Noto Sans KR", sans-serif;
+	font-size: 16px;
+	/* background-color: #DCFFDC; */
+}
 
-      /* 캘린더 위의 해더 스타일(날짜가 있는 부분) */
-      
-      .fc-header-toolbar {
-        padding-top: 1em;
-        padding-left: 1em;
-        padding-right: 1em;
-        margin-top: 100px;
-      }
+/* 캘린더 위의 해더 스타일(날짜가 있는 부분) */
+.fc-header-toolbar {
+	padding-top: 1em;
+	padding-left: 1em;
+	padding-right: 1em;
+	margin-top: 100px;
+}
 
-      .header {
-        display: flex;
-        width: 1280px;
-        margin: auto;
-        height: 86px;
-      }
-      .header > img {
-          width: 167px;
-          height: 77px;
-          margin-top: 6px;
-      }
+.header {
+	display: flex;
+	width: 1280px;
+	margin: auto;
+	height: 86px;
+}
 
-      .nav {
-        display: flex;
-        justify-content: flex-end;
-        width: 1280px;
-        line-height: 86px;
-      }
+.header>img {
+	width: 167px;
+	height: 77px;
+	margin-top: 6px;
+}
 
-      .nav > li {
-        list-style-type: none;
-        margin-left: 84px;
-        color: rgb(0, 0, 0);
-        font-size: 25px;
-      }
+.nav {
+	display: flex;
+	justify-content: flex-end;
+	width: 1280px;
+	line-height: 86px;
+}
 
-      .nav > li > a {
-        font-size: 24px;
-        color: rgb(0, 0, 0);
-        text-decoration: none;
-      }
+.nav>li {
+	list-style-type: none;
+	margin-left: 84px;
+	color: rgb(0, 0, 0);
+	font-size: 25px;
+}
 
-      footer {
-        display: flex;
-        background: #1f1f1f;
-        padding: 30px;
-      }
+.nav>li>a {
+	font-size: 24px;
+	color: rgb(0, 0, 0);
+	text-decoration: none;
+}
 
-      footer > div:first-child {
-        flex: 3;
-        text-align: center;
-        color: #fff;
-      }
+footer {
+	display: flex;
+	background: #1f1f1f;
+	padding: 30px;
+}
 
-      footer > div:last-child {
-        flex: 9;
-        color: #fff;
-      }
-      
-      #calendar {
-		max-width: 75%;
-		margin: 0 auto;
-	  }
-      
-    </style>
-  </head>
-  <body>
-  	<%
+footer>div:first-child {
+	flex: 3;
+	text-align: center;
+	color: #fff;
+}
+
+footer>div:last-child {
+	flex: 9;
+	color: #fff;
+}
+
+#calendar {
+	max-width: 75%;
+	margin: 0 auto;
+}
+</style>
+</head>
+<body>
+	<%
   	request.setCharacterEncoding("UTF-8");
+  	
+  	String num = request.getParameter("num");
+  	
+  	System.out.println(num);
 	
 	MemberVO vo = (MemberVO)session.getAttribute("member");
   	
 	CalendarDAO dao = new CalendarDAO();
-	ArrayList<CalendarVO> al = dao.calendar();
+	ArrayList<CalendarVO> cal = dao.calendar(num);
 
-	System.out.println(al.size());
+	System.out.println(cal.size());
 
-	for (int i = 0; i < al.size(); i++) {
-		if (al.get(i).getState().equals("10")) {
-			al.get(i).setState("물");
+	for (int i = 0; i < cal.size(); i++) {
+		if (cal.get(i).getState().equals("10")) {
+			cal.get(i).setState("물");
 		}
-		if (al.get(i).getState().equals("20")) {
-			al.get(i).setState("LED");
+		if (cal.get(i).getState().equals("20")) {
+			cal.get(i).setState("LED");
+		}
+		if (cal.get(i).getState().equals("1")) {
+			cal.get(i).setState("사용자 물 공급");
+		}
+		if (cal.get(i).getState().equals("0")) {
+			cal.get(i).setState("사용자 물 공급");
 		}
 	}
 	%>
-  
-    <!-- Wrapper -->
 
-    <div id="wrapper">
-      <div class="header">
-          <a href="Main.jsp"><img src="./img/Main_logo.png" style="margin: 6px"></a>
-       <ul class="nav">
-        <%if (vo==null) { %>
-          <li><a href="login.jsp">로그인/회원가입</a></li>
-		<% } else { %>
-		  <li><a href="#">식물 등록</a></li>
-          <li><a href="calendar.jsp">식물 캘린더</a></li>
-          <li><a href="PlantDiaryMain.jsp">나만의 식물일기</a></li>
-          <li><a href="Plant_system.jsp">식물원격제어</a></li>
-		  <li><a href="LogoutService">로그아웃</a></li>
-		<% } %>
-        </ul>
-       </div>
-      </div>
+	<!-- Wrapper -->
 
-      <!-- Menu -->
-      <div class="a">
-        <nav id="Update"></nav>
-        <!-- calendar 태그 -->
-        <div id="calendar-container">
-          <div id="calendar"></div>
-        </div>
-      </div>
-      <div class="main_text2"></div>
-      <footer>
-        <div>LOGO</div>
-        <div>
-          CEO. 김태석<br />
-          Addr. 광주광역시 동구 예술길 31-15 3층 스마트인재개발원<br />
-          010-0000-0000<br />
-          COPYRIGHT 2021 우리머만들조. ALL RIGHT RESERVED.
-        </div>
-      </footer>
-    </div>
+	<div id="wrapper">
+		<div class="header">
+			<a href="Main.jsp"> <img src="./img/Main_logo.png"
+				style="margin: 6px"></a>
+			<ul class="nav">
+				<%if (vo==null) { %>
+				<li><a href="login.jsp">로그인/회원가입</a></li>
+				<% } else { %>
+				<li><a href="Join_plant.jsp">식물 등록</a></li>
+				<li><a href="SelectPlant">식물 캘린더</a></li>
+				<li><a href="PlantDiaryMain.jsp">나만의 식물일기</a></li>
+				<li><a href="RemotePlant.jsp">식물원격제어</a></li>
+				<li><a href="LogoutService">로그아웃</a></li>
+				<% } %>
+			</ul>
+		</div>
+	</div>
 
-    <!-- Scripts -->
-    <script src="assets/js/jquery.min.js"></script>
-    <script src="assets/js/jquery.scrolly.min.js"></script>
-    <script src="assets/js/jquery.scrollex.min.js"></script>
-    <script src="assets/js/skel.min.js"></script>
-    <script src="assets/js/util.js"></script>
-    <!--[if lte IE 8
+	<!-- Menu -->
+	<div class="a">
+		<nav id="Update"></nav>
+		<!-- calendar 태그 -->
+		<div id="calendar-container">
+			<div id="calendar"></div>
+		</div>
+	</div>
+	<div class="main_text2"></div>
+	<footer>
+		<div>LOGO</div>
+		<div>
+			CEO. 김태석<br /> Addr. 광주광역시 동구 예술길 31-15 3층 스마트인재개발원<br />
+			010-0000-0000<br /> COPYRIGHT 2021 우리머만들조. ALL RIGHT RESERVED.
+		</div>
+	</footer>
+	</div>
+
+	<!-- Scripts -->
+	<script src="assets/js/jquery.min.js"></script>
+	<script src="assets/js/jquery.scrolly.min.js"></script>
+	<script src="assets/js/jquery.scrollex.min.js"></script>
+	<script src="assets/js/skel.min.js"></script>
+	<script src="assets/js/util.js"></script>
+	<!--[if lte IE 8
       ]><script src="assets/js/ie/respond.min.js"></script
     ><![endif]-->
-    <script src="assets/js/main.js"></script>
-    <script>
+	<script src="assets/js/main.js"></script>
+	<script>
       (function () {
         $(function () {
           // calendar element 취득
@@ -205,20 +208,25 @@
             locale: "ko", // 한국어 설정
           });
           // calendar에 이벤트 추가
-          <%for (int i = 0; i < al.size(); i++) {%>
-			             <%for (int j = 0; i < al.size(); i++) {%>
+          <%for (int i = 0; i < cal.size(); i++) {%>
+			             <%for (int j = 0; i < cal.size(); i++) {%>
 							calendar.addEvent({
-			              	title: "<%=al.get(i).getState()%>",
-								<%if (al.get(i).getState().equals("물")) {%>
-									start: "<%=al.get(i).getDate()%>", // 시작시간
-									end: "<%=al.get(i).getDate()%>", // 끝나는 시간
+			              	title: "<%=cal.get(i).getState()%>",
+								<%if (cal.get(i).getState().equals("물")) {%>
+									start: "<%=cal.get(i).getDate()%>", // 시작시간
+									end: "<%=cal.get(i).getDate()%>", // 끝나는 시간
 									backgroundColor:"blue"
 						 		<%}
-								if (al.get(i).getState().equals("LED")) {%>
-									start: "<%=al.get(i).getDate()%>", // 시작시간	
-									end: "<%=al.get(i).getDate()%>", // 끝나는 시간	
+								if (cal.get(i).getState().equals("LED")) {%>
+									start: "<%=cal.get(i).getDate()%>", // 시작시간	
+									end: "<%=cal.get(i).getDate()%>", // 끝나는 시간	
 									backgroundColor:"orange"
-						 		<%}%> 
+						 		<%}
+								if (cal.get(i).getState().equals("사용자 물 공급")) {%>
+								start: "<%=cal.get(i).getDate()%>", // 시작시간	
+								end: "<%=cal.get(i).getDate()%>", // 끝나는 시간	
+								backgroundColor:"skyblue"
+					 			<%}%> 
 							})				
 			            <%}%>
 		            <%}%>
@@ -237,5 +245,5 @@
         });
       })();
     </script>
-  </body>
+</body>
 </html>

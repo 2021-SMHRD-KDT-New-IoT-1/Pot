@@ -5,12 +5,20 @@ public class PlantVO {
 	private String comment;
 	private String pt_nick;
 	private String mem_num;
+	private String pt_num;
 
 	// ¸Þ¼­µå
 	public PlantVO(String comment, String pt_nick, String mem_num) {
 		this.comment = comment;
 		this.pt_nick = pt_nick;
 		this.mem_num = mem_num;
+	}
+	
+	public PlantVO(String comment, String pt_nick, String mem_num, String pt_num) {
+		this.comment = comment;
+		this.pt_nick = pt_nick;
+		this.mem_num = mem_num;
+		this.pt_num = pt_num;
 	}
 
 	public String getComment() {
@@ -35,5 +43,13 @@ public class PlantVO {
 
 	public void setMem_num(String mem_num) {
 		this.mem_num = mem_num;
+	}
+
+	public String getPt_num() {
+		return pt_num;
+	}
+
+	public void setPt_num(String pt_num) {
+		this.pt_num = pt_num;
 	}
 }

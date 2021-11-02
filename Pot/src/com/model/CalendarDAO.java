@@ -11,8 +11,8 @@ public class CalendarDAO {
 	PreparedStatement pst = null;
 	ResultSet rs = null;
 	int cnt = 0;
-	CalendarVO vo = null;
-	ArrayList<CalendarVO> al = null;
+	CalendarVO cvo = null;
+	ArrayList<CalendarVO> cal = null;
 
 	public void connection() {
 		try {
@@ -47,13 +47,15 @@ public class CalendarDAO {
 	}
 
 	// 1. 캘린더 값 조회
-	public ArrayList<CalendarVO> calendar() {
-		al = new ArrayList<CalendarVO>();
+	public ArrayList<CalendarVO> calendar(String num) {
+		cal = new ArrayList<CalendarVO>();
 
 		try {
 			connection();
-			String sql = "SELECT * FROM ts_state";
+			String sql = "SELECT p.pt_num, s.st_date, s.st_state FROM ts_plant p, ts_state s WHERE p.pt_num=s.pt_num AND p.pt_num= ?";
 			pst = conn.prepareStatement(sql);
+			
+			pst.setString(1, num);
 
 			rs = pst.executeQuery();
 
@@ -63,9 +65,9 @@ public class CalendarDAO {
 				String get_Date = rs.getString(2);
 				String get_State = rs.getString(3);
 
-				vo = new CalendarVO(get_PtNum, get_Date, get_State);
+				cvo = new CalendarVO(get_PtNum, get_Date, get_State);
 
-				al.add(vo);
+				cal.add(cvo);
 			}
 			System.out.println("조회 성공!");
 
@@ -76,6 +78,6 @@ public class CalendarDAO {
 			close();
 		}
 
-		return al;
+		return cal;
 	}
 }
