@@ -17,9 +17,12 @@
 	<%
 	request.setCharacterEncoding("UTF-8");
   	
-  	String pt_num = request.getParameter("num");
-  	
+  	int pt_num = Integer.parseInt(request.getParameter("num"));
+
   	System.out.println("리모트 식물 번호: " + pt_num);
+  	CalendarDAO dao = new CalendarDAO();
+  	
+  	int humid = dao.getHumid(pt_num);
 	
 	MemberVO vo = (MemberVO)session.getAttribute("member");
 	%>
@@ -41,7 +44,7 @@
 		<form action="RemotePlant" method="post">
 			<div class="water_sensor">
 				<h1>습도</h1>
-				<h1 class="humidity">100%</h1>
+				<h1 class="humidity"><%=humid%>%</h1>
 					<img class="logo2" src="./img/Main_logo.png">
 				<div class="int-area">
                 	<input type="hidden" value="<%=pt_num %>" name="pt_num" id="pt_num" autocomplete="off" required>

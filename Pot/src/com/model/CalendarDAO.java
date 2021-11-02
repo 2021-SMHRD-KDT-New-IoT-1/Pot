@@ -80,7 +80,7 @@ public class CalendarDAO {
 		return cal;
 	}
 	
-	// 2. 
+	// 2. 물주기 버튼
 	public int waterPump(String pt_num) {
 		try {
 			connection();
@@ -104,4 +104,30 @@ public class CalendarDAO {
 		}
 		return cnt;
 	}
+	
+	public int getHumid(int num) {
+		int humid = 0;
+		try {
+			connection();
+			String sql = "SELECT humidity FROM pt_humidity WHERE pt_num=?";
+			pst = conn.prepareStatement(sql);
+			
+			pst.setInt(1, num);
+
+			rs = pst.executeQuery();
+
+			while (rs.next()) {
+				humid = Integer.parseInt(rs.getString(1));
+			}
+			System.out.println("조회 성공!");
+
+		} catch (Exception e) {
+			e.printStackTrace();
+			System.out.println("조회 실패");
+		} finally {
+			close();
+		}
+		return humid;
+	}
+
 }
