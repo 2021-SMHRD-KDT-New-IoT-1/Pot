@@ -101,13 +101,20 @@ table.type09 tbody th {
 }
 
 table.type09 td {
-	width: 550px;
+	width: 400px;
 	padding: 10px;
 	vertical-align: inherit;
 	border-bottom: 1px solid #ccc;
 }
 
 table.type09 td:nth-child(3) {
+	width: 150px;
+	padding: 10px;
+	vertical-align: inherit;
+	border-bottom: 1px solid #ccc;
+}
+
+table.type09 td:nth-child(4) {
 	width: 150px;
 	padding: 10px;
 	vertical-align: inherit;
