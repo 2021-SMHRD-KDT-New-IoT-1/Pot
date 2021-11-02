@@ -48,7 +48,17 @@
 				<div id="head">식물 습도 관리 페이지</div>
 				<div id="nava"></div>
 				<div id="sider">
+				<% if(humid > 70) {%>
 					<img id="emoji" src="./img/heartEmoji.png">
+				<%} else if(humid > 60) {%>
+					<img id="emoji" src="./img/smileEmoji.png">
+				<%} else if(humid > 50) {%>
+					<img id="emoji" src="./img/normalEmoji.png">
+				<%} else if(humid > 40) {%>
+					<img id="emoji" src="./img/cryEmoji.png">
+				<%} else {%>
+					<img id="emoji" src="./img/deathEmoji.png">
+				<%} %>
 				</div>
 				<div id="sec1">습도</div>
 				<div id="sec2"><%=humid%>%</div>
