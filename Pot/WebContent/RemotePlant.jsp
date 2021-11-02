@@ -15,7 +15,7 @@
 </head>
 <body>
 	<%
-request.setCharacterEncoding("UTF-8");
+	request.setCharacterEncoding("UTF-8");
   	
   	String pt_num = request.getParameter("num");
   	
@@ -42,14 +42,13 @@ request.setCharacterEncoding("UTF-8");
 			<div class="water_sensor">
 				<h1>습도</h1>
 				<h1 class="humidity">100%</h1>
-				<img class="logo2" src="./img/Main_logo.png">
+					<img class="logo2" src="./img/Main_logo.png">
+				<div class="int-area">
+                	<input type="hidden" value="<%=pt_num %>" name="pt_num" id="pt_num" autocomplete="off" required>
+            	</div>
 				<div class="btn-area">
 					<button id="ledCheck" type="button" class= "btn btn-default">전송</button>
 				</div>
-				<div class="int-area">
-                <input type="hidden" value="<%=pt_num %>" name="pt_num" id="pt_num"
-                autocomplete="off" required>
-            </div>
 		</form>
 	</div>
 	<div class="main_text2"></div>

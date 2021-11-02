@@ -91,13 +91,13 @@ public class CalendarDAO {
 			
 			pst.setString(1, pt_num);
 			
-			System.out.println(pt_num + " " + 1);
+			System.out.println("연결된 식물 번호: " + pt_num);
 			
 			cnt = pst.executeUpdate();
 			
-			System.out.println("입력성공");
+			System.out.println("상태 입력성공");
 		} catch (Exception e) {
-			System.out.println("입력실패");
+			System.out.println("상태 입력실패");
 			e.printStackTrace();
 		} finally {
 			close();

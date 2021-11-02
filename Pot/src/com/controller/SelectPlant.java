@@ -29,7 +29,7 @@ public class SelectPlant extends HttpServlet {
 		PlantDAO pdao = new PlantDAO();
 		
 		String mem_num = vo.getMem_num();
-		System.out.println("아이디" + mem_num);
+		System.out.println("아이디: " + mem_num);
 		ArrayList<PlantVO> pvo = pdao.selectPlant(mem_num);
 		
 		if (pvo != null) {
