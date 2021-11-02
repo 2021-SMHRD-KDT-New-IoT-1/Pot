@@ -86,7 +86,7 @@ public class CalendarDAO {
 		try {
 			connection();
 			
-			String sql = "INSERT INTO ts_state VALUES (?, sysdate, ?)";
+			String sql = "INSERT INTO ts_state VALUES (?, sysdate+(interval '9' hour), ?)";
 			
 			pst = conn.prepareStatement(sql);
 			
