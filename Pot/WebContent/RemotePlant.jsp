@@ -18,6 +18,7 @@
 	request.setCharacterEncoding("UTF-8");
   	
   	int pt_num = Integer.parseInt(request.getParameter("num"));
+
   	System.out.println("리모트 식물 번호: " + pt_num);
   	CalendarDAO dao = new CalendarDAO();
   	
