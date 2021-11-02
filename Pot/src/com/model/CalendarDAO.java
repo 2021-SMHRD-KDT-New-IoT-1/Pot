@@ -82,18 +82,16 @@ public class CalendarDAO {
 	
 	// 2. 
 	public int waterPump(String pt_num) {
-		int state = 1;
 		try {
 			connection();
 			
-			String sql = "INSERT INTO ts_state VALUES (?, sysdate+(interval '9' hour), ?)";
+			String sql = "INSERT INTO ts_state VALUES (?, sysdate+(interval '9' hour), 1)";
 			
 			pst = conn.prepareStatement(sql);
 			
 			pst.setString(1, pt_num);
-			pst.setInt(2, state);
 			
-			System.out.println(pt_num + " " + state);
+			System.out.println(pt_num + " " + 1);
 			
 			cnt = pst.executeUpdate();
 			
