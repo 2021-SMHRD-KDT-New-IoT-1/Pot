@@ -77,7 +77,33 @@ public class CalendarDAO {
 		} finally {
 			close();
 		}
-
 		return cal;
+	}
+	
+	// 2. 
+	public int waterPump(String pt_num) {
+		int state = 1;
+		try {
+			connection();
+			
+			String sql = "INSERT INTO ts_state VALUES (?, sysdate, ?)";
+			
+			pst = conn.prepareStatement(sql);
+			
+			pst.setString(1, pt_num);
+			pst.setInt(2, state);
+			
+			System.out.println(pt_num + " " + state);
+			
+			cnt = pst.executeUpdate();
+			
+			System.out.println("입력성공");
+		} catch (Exception e) {
+			System.out.println("입력실패");
+			e.printStackTrace();
+		} finally {
+			close();
+		}
+		return cnt;
 	}
 }
