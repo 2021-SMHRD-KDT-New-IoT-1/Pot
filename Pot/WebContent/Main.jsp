@@ -32,6 +32,7 @@
 					<% } %>
 				</ul>
 			</div>
+			<hr id="topLine" color="darkgray" size="3px" width="100%">
 			<div class="intro_text">
 				<%if (vo==null) { %>
 				<h2>

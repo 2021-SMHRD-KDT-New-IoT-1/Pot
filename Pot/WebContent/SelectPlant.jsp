@@ -43,6 +43,7 @@
 					<% } %>
 				</ul>
 			</div>
+			<hr id="topLine" color="darkgray" size="3px" width="100%">
 			<div class="intro_text">
 				<br>
 				<h2 align="center">식물 선택 페이지</h2>

@@ -151,6 +151,7 @@ footer>div:last-child {
 				</ul>
 		</div>
 	</div>
+	<hr id="topLine" color="darkgray" size="3px" width="100%">
 
 	<!-- Menu -->
 	<div class="a">
