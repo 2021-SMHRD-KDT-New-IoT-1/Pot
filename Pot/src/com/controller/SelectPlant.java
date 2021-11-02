@@ -33,13 +33,11 @@ public class SelectPlant extends HttpServlet {
 		ArrayList<PlantVO> pvo = pdao.selectPlant(mem_num);
 		
 		if (pvo != null) {
-			System.out.println("실행1");
 			// 세션 객체 생성, 서블렛이아니라서 리퀘스트나 리스폰스를 못함
 			session = request.getSession();
 			
 			// 세션 값 설정
 			session.setAttribute("plant", pvo);
-			System.out.println("실행2");
 			System.out.println("조회 성공");
 
 			response.sendRedirect("SelectPlant.jsp");
