@@ -124,6 +124,12 @@ footer>div:last-child {
 		if (cal.get(i).getState().equals("20")) {
 			cal.get(i).setState("LED");
 		}
+		if (cal.get(i).getState().equals("1")) {
+			cal.get(i).setState("사용자 물 공급");
+		}
+		if (cal.get(i).getState().equals("0")) {
+			cal.get(i).setState("사용자 물 공급");
+		}
 	}
 	%>
 
@@ -215,7 +221,12 @@ footer>div:last-child {
 									start: "<%=cal.get(i).getDate()%>", // 시작시간	
 									end: "<%=cal.get(i).getDate()%>", // 끝나는 시간	
 									backgroundColor:"orange"
-						 		<%}%> 
+						 		<%}
+								if (cal.get(i).getState().equals("사용자 물 공급")) {%>
+								start: "<%=cal.get(i).getDate()%>", // 시작시간	
+								end: "<%=cal.get(i).getDate()%>", // 끝나는 시간	
+								backgroundColor:"skyblue"
+					 			<%}%> 
 							})				
 			            <%}%>
 		            <%}%>
