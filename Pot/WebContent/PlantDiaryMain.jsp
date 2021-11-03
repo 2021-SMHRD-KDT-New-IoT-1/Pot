@@ -35,6 +35,7 @@
 					<% } %>
 				</ul>
 			</div>
+			<hr id="topLine" color="darkgray" size="3px" width="100%">
 			<div class="board_wrap">
 				<div class="board_title">
 					<strong>식물일기</strong>

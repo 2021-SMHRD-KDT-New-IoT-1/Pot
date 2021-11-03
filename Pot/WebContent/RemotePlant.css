@@ -74,12 +74,15 @@ margin-left: 500px;
     width: 100%;
     height: 418px;
     background-image: url(./img/MainSunPlant.jpg);
+    margin-top: 260px;
+    opacity: 0.25;
 }
 
 footer {
     display: flex;
     background:#1f1f1f;
     padding: 30px;
+    margin-top: 675px;
 }
 
 footer > div:first-child {
@@ -92,31 +95,3 @@ footer > div:last-child {
     flex:9;
     color: #fff;
 }
-    
-    
-
-
-
-
-   
-
-  
-
-    
-
-
-
-
-
-    
-    
-
-
-   
-
-
-   
-
-
-
-

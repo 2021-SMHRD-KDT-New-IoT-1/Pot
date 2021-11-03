@@ -12,46 +12,73 @@
 	href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300&display=swap"
 	rel="stylesheet">
 <link rel="stylesheet" type="text/css" href="RemotePlant.css">
+<link rel="stylesheet" type="text/css" href="RemotePlant2.css">
 </head>
 <body>
 	<%
 	request.setCharacterEncoding("UTF-8");
   	
-  	String pt_num = request.getParameter("num");
-  	
+  	int pt_num = Integer.parseInt(request.getParameter("num"));
+
   	System.out.println("리모트 식물 번호: " + pt_num);
+  	CalendarDAO dao = new CalendarDAO();
+  	
+  	int humid = dao.getHumid(pt_num);
 	
 	MemberVO vo = (MemberVO)session.getAttribute("member");
 	%>
 	<div class="main2">
 		<div class="header">
 			<a href="Main.jsp"><img src="./img/Main_logo.png"
-					style="margin: 6px"></a>
-				<ul class="nav">
-					<%if (vo==null) { %>
-					<li><a href="login.jsp">로그인/회원가입</a></li>
-					<% } else { %>
-					<li><a href="Join_plant.jsp">식물 등록</a></li>
-					<li><a href="SelectPlant">식물 관리</a></li>
-					<li><a href="PlantDiaryMain.jsp">나만의 식물일기</a></li>
-					<li><a href="LogoutService">로그아웃</a></li>
-					<% } %>
-				</ul>
+				style="margin: 6px"></a>
+			<ul class="nav">
+				<%if (vo==null) { %>
+				<li><a href="login.jsp">로그인/회원가입</a></li>
+				<% } else { %>
+				<li><a href="Join_plant.jsp">식물 등록</a></li>
+				<li><a href="SelectPlant">식물 관리</a></li>
+				<li><a href="PlantDiaryMain.jsp">나만의 식물일기</a></li>
+				<li><a href="LogoutService">로그아웃</a></li>
+				<% } %>
+			</ul>
 		</div>
+		<hr id="topLine" color="darkgray" size="3px" width="100%">
 		<form action="RemotePlant" method="post">
+			<div id="single">
+				<div id="head">식물 습도 관리 페이지</div>
+				<div id="nava"></div>
+				<div id="sider">
+				<% if(humid > 70) {%>
+					<img id="emoji" src="./img/heartEmoji.png">
+				<%} else if(humid > 60) {%>
+					<img id="emoji" src="./img/smileEmoji.png">
+				<%} else if(humid > 50) {%>
+					<img id="emoji" src="./img/normalEmoji.png">
+				<%} else if(humid > 40) {%>
+					<img id="emoji" src="./img/cryEmoji.png">
+				<%} else {%>
+					<img id="emoji" src="./img/deathEmoji.png">
+				<%} %>
+				</div>
+				<div id="sec1">습도</div>
+				<div id="sec2"><%=humid%>%</div>
+				<div id="foot">
+					<input type="hidden" value="<%=pt_num %>" name="pt_num" id="pt_num" autocomplete="off" required>
+					<button id="ledCheck" type="submit" class="btn btn-default">물주기</button>
+				</div>
+				</div>
+		<%-- 	</div>
 			<div class="water_sensor">
 				<h1>습도</h1>
-				<h1 class="humidity">100%</h1>
-					<img class="logo2" src="./img/Main_logo.png">
+				<h1 class="humidity"><%=humid%>%</h1>
+				<img class="logo2" src="./img/Main_logo.png">
 				<div class="int-area">
-                	<input type="hidden" value="<%=pt_num %>" name="pt_num" id="pt_num" autocomplete="off" required>
-            	</div>
-				<div class="btn-area">
-					<button id="ledCheck" type="button" class= "btn btn-default">전송</button>
 				</div>
+				<div class="btn-area">
+					<button id="ledCheck" type="submit" class="btn btn-default">전송</button>
+				</div> --%>
 		</form>
 	</div>
-	<div class="main_text2"></div>
 	<footer>
 		<div>LOGO</div>
 		<div>
