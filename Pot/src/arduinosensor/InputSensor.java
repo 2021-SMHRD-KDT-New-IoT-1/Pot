@@ -25,5 +25,4 @@ public class InputSensor extends HttpServlet {
 		PrintWriter out = response.getWriter();
 		out.print(result);
 	}
-
 }

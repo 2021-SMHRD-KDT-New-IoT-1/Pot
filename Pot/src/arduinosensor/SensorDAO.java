@@ -6,6 +6,8 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+import com.model.HumidityVO;
+
 public class SensorDAO {
 	private Connection conn;
 	private PreparedStatement psmt;
@@ -74,6 +76,42 @@ public class SensorDAO {
 		} finally {
 			close();
 		}
+		return vo;
+	}
+
+	public HumidityVO getSensor_b() {
+		HumidityVO vo = null;
+		conn();
+		String sql = "SELECT st_state FROM ts_state where st_state=1";
+		try {
+			psmt = conn.prepareStatement(sql);
+			rs = psmt.executeQuery();
+			if(rs.next()) {
+				int mysensor = rs.getInt(1);
+				vo = new HumidityVO(mysensor);
+			}
+		} catch(SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close();
+		}
+		return vo;
+	}
+	
+	public HumidityVO update_b(int mysensor) {
+		HumidityVO vo = null;
+		conn();
+		String sql1 = "update ts_state set st_state = 0 where st_state=1";
+		try {
+			psmt = conn.prepareStatement(sql1);
+			psmt.setInt(1, mysensor);
+			psmt.executeUpdate();
+		} catch(SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close();
+		}
+		vo = getSensor_b();
 		return vo;
 	}
 }
