@@ -44,11 +44,11 @@ public class SensorDAO {
 	public SensorVO update(int mysensor) {
 		SensorVO vo = null;
 		conn();
-		String sql1 = "update arduinosensor set mysensor = ?";
+		String sql1 = "update PT_HUMIDITY set HUMIDITY = ?";
 		try {
 			psmt = conn.prepareStatement(sql1);
 			psmt.setInt(1, mysensor);
-			psmt.execute();
+			psmt.executeUpdate();
 		} catch(SQLException e) {
 			e.printStackTrace();
 		} finally {
@@ -61,7 +61,7 @@ public class SensorDAO {
 	public SensorVO getSensor() {
 		SensorVO vo = null;
 		conn();
-		String sql = "select * from arduinosensor";
+		String sql = "select HUMIDITY from PT_HUMIDITY";
 		try {
 			psmt = conn.prepareStatement(sql);
 			rs = psmt.executeQuery();
