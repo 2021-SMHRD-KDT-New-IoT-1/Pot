@@ -12,16 +12,18 @@ import javax.servlet.http.HttpServletResponse;
 import com.google.gson.Gson;
 import com.model.HumidityVO;
 
-@WebServlet("/GetSensor")
-public class GetSensor extends HttpServlet {
+@WebServlet("/GetSensor_b")
+public class GetSensor_b extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-
+	@Override
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	
 		SensorDAO dao = new SensorDAO();
-		SensorVO vo = dao.getSensor();
+		HumidityVO vo = dao.getSensor_b();
 		String result = new Gson().toJson(vo);
 		PrintWriter out = response.getWriter();
 		out.print(result);
 		System.out.println(result);
+	
 	}
 }

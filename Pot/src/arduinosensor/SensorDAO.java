@@ -43,7 +43,7 @@ public class SensorDAO {
 		}
 	}
 	
-	public SensorVO update(int mysensor) {
+	public SensorVO update2(int mysensor) {
 		SensorVO vo = null;
 		conn();
 		String sql1 = "update PT_HUMIDITY set HUMIDITY = ?";
@@ -114,4 +114,24 @@ public class SensorDAO {
 		vo = getSensor_b();
 		return vo;
 	}
+	
+	//DB의 1값을 읽어오는 메소드
+	
+	public SensorVO update(int mysensor) {
+		SensorVO vo = null;
+		conn();
+		String sql1 = "update PT_HUMIDITY set HUMIDITY = ?";
+		try {
+			psmt = conn.prepareStatement(sql1);
+			psmt.setInt(1, mysensor);
+			psmt.executeUpdate();
+		} catch(SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close();
+		}
+		vo = getSensor();
+		return vo;
+	}
+	
 }

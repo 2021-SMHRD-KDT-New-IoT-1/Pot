@@ -69,12 +69,6 @@
 					<div class="contens2">IO-OT는 알아서 물을 줍니다</div>
 				</div>
 			</li>
-			<li>
-				<div>
-					<div class="contens1"></div>
-					<div class="contens2"></div>
-				</div>
-			</li>
 		</ul>
 		<!-----------amount end--------------->
 
