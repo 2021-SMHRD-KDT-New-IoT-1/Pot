@@ -24,6 +24,10 @@ public class GetSensor_b extends HttpServlet {
 		PrintWriter out = response.getWriter();
 		out.print(result);
 		System.out.println(result);
+		int value = Integer.parseInt(result);
+		vo = dao.update_b(value);
+		out.print(value);
+		System.out.println(value);
 	
 	}
 }
