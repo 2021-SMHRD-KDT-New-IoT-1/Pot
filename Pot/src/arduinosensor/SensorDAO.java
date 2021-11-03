@@ -104,7 +104,7 @@ public class SensorDAO {
 		String sql1 = "update ts_state set st_state = 0 where st_state=1";
 		try {
 			psmt = conn.prepareStatement(sql1);
-			psmt.setInt(1, mysensor);
+			//psmt.setInt(1, mysensor);
 			psmt.executeUpdate();
 		} catch(SQLException e) {
 			e.printStackTrace();
