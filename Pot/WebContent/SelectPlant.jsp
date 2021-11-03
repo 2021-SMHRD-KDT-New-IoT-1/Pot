@@ -55,7 +55,7 @@
 							<th scope="cols">NICK</th>
 							<!-- 식물정보 -->
 							<th scope="cols">COMMENT</th>
-							<th scope="cols">CHOICE</th>
+							<th scope="cols">CALENDAR</th>
 							<th scope="cols">WATER PUMP</th>
 						</tr>
 					</thead>

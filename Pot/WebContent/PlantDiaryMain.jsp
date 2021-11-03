@@ -46,61 +46,53 @@
 						<div class="top">
 							<div class="num">번호</div>
 							<div class="title">제목</div>
-							<div class="writer">글쓴이</div>
+							<div class="writer">닉네임</div>
 							<div class="date">작성일</div>
-							<div class="count">조회</div>
 						</div>
 						<div>
 							<div class="num">5</div>
 							<div class="title">
-								<a href="view.html">글 제목이 들어갑니다.</a>
+								<a href="view(Plantdiary).html">오늘도 너무 이쁜 가을이~</a>
 							</div>
-							<div class="writer">김이름</div>
-							<div class="date">2021.1.15</div>
-							<div class="count">33</div>
+							<div class="writer">장광수</div>
+							<div class="date">2021.11.3.</div>
 						</div>
 						<div>
 							<div class="num">4</div>
 							<div class="title">
-								<a href="view.html">글 제목이 들어갑니다.</a>
+								<a href="view.html">주말이가 잘 크고 있다.</a>
 							</div>
-							<div class="writer">김이름</div>
-							<div class="date">2021.1.15</div>
-							<div class="count">33</div>
+							<div class="writer">장광수</div>
+							<div class="date">2021.11.2.</div>
 						</div>
 						<div>
 							<div class="num">3</div>
 							<div class="title">
-								<a href="view.html">글 제목이 들어갑니다.</a>
+								<a href="view.html">주말이를 새로 들여왔다!</a>
 							</div>
-							<div class="writer">김이름</div>
-							<div class="date">2021.1.15</div>
-							<div class="count">33</div>
+							<div class="writer">장광수</div>
+							<div class="date">2021.10.31</div>
 						</div>
 						<div>
 							<div class="num">2</div>
 							<div class="title">
-								<a href="view.html">글 제목이 들어갑니다.</a>
+								<a href="view.html">가을가을 가을이.</a>
 							</div>
-							<div class="writer">김이름</div>
-							<div class="date">2021.1.15</div>
-							<div class="count">33</div>
+							<div class="writer">장광수</div>
+							<div class="date">2021.10.30</div>
 						</div>
 						<div>
 							<div class="num">1</div>
 							<div class="title">
-								<a href="view.html">글 제목이 들어갑니다.</a>
+								<a href="view.html">새로 키우는 가을이..</a>
 							</div>
-							<div class="writer">김이름</div>
-							<div class="date">2021.1.15</div>
-							<div class="count">33</div>
+							<div class="writer">장광수</div>
+							<div class="date">2021.10.29</div>
 						</div>
 					</div>
 					<div class="board_page">
 						<a href="#" class="bt first"><<</a> <a href="#" class="bt prev"><</a>
-						<a href="#" class="num on">1</a> <a href="#" class="num">2</a> <a
-							href="#" class="num">3</a> <a href="#" class="num">4</a> <a
-							href="#" class="num">5</a> <a href="#" class="bt next">></a> <a
+						<a href="#" class="num on">1</a><a href="#" class="bt next">></a> <a
 							href="#" class="bt last">>></a>
 					</div>
 					<div class="bt_wrap">
