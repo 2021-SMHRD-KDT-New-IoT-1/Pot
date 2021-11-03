@@ -67,6 +67,42 @@
 					<button id="ledCheck" type="submit" class="btn btn-default">물주기</button>
 				</div>
 				</div>
+				<script type="text/javascript">
+				$(function(){ 
+					$.ajax({
+						url : "GetSensor",
+						type : "get",
+						dataType : "json",
+						success : function(data){
+							$('#result').html("현재 모터 상태 : " + data.mysensor);
+						},
+						error : function(){
+							alert('1');
+						}
+					});
+				});
+				
+					$("#ledCheck").on('click',function(){
+						var mysensor = $('#mysensor').val();
+						count++;
+						if(count%2==0){
+							count=0;
+						}
+						$.ajax({
+							url : "InputSensor",
+							type : "get",
+							data : {"mysensor": count},
+							dataType : "json",
+							success : function(data){
+								$('#result').html("현재 모터 상태 : " + data.mysensor);
+							},
+							error : function(){
+								alert('2');
+							}
+						});
+					});
+				
+				</script>
 		<%-- 	</div>
 			<div class="water_sensor">
 				<h1>습도</h1>

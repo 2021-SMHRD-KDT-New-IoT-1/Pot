@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.google.gson.Gson;
+import com.model.HumidityVO;
 
 @WebServlet("/GetSensor")
 public class GetSensor extends HttpServlet {
@@ -17,7 +18,7 @@ public class GetSensor extends HttpServlet {
 
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		SensorDAO dao = new SensorDAO();
-		SensorVO vo = dao.getSensor();
+		HumidityVO vo = dao.getSensor_b();
 		String result = new Gson().toJson(vo);
 		PrintWriter out = response.getWriter();
 		out.print(result);
