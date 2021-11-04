@@ -82,7 +82,7 @@ public class SensorDAO {
 	public HumidityVO getSensor_b() {
 		HumidityVO vo = null;
 		conn();
-		String sql = "SELECT st_state FROM ts_state where st_state=1";
+		String sql = "SELECT st_state FROM state where st_state=1";
 		try {
 			psmt = conn.prepareStatement(sql);
 			rs = psmt.executeQuery();
@@ -101,7 +101,7 @@ public class SensorDAO {
 	public HumidityVO update_b(int mysensor) {
 		HumidityVO vo = null;
 		conn();
-		String sql1 = "update ts_state set st_state = 0 where st_state=1";
+		String sql1 = "update state set st_state = 0 where st_state=1";
 		try {
 			psmt = conn.prepareStatement(sql1);
 			psmt.setInt(1, mysensor);

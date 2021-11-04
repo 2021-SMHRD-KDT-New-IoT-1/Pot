@@ -52,7 +52,7 @@ public class CalendarDAO {
 
 		try {
 			connection();
-			String sql = "SELECT p.pt_num, s.st_date, s.st_state FROM ts_plant p, ts_state s WHERE p.pt_num=s.pt_num AND p.pt_num= ?";
+			String sql = "SELECT p.pt_num, s.st_date, s.st_state FROM plant p, state s WHERE p.pt_num=s.pt_num AND p.pt_num= ?";
 			pst = conn.prepareStatement(sql);
 			
 			pst.setString(1, num);
@@ -85,7 +85,7 @@ public class CalendarDAO {
 		try {
 			connection();
 			
-			String sql = "INSERT INTO ts_state VALUES (?, sysdate+(interval '9' hour), 1)";
+			String sql = "INSERT INTO state VALUES (?, sysdate+(interval '9' hour), 1)";
 			
 			pst = conn.prepareStatement(sql);
 			

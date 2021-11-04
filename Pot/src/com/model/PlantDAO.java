@@ -56,7 +56,7 @@ public class PlantDAO {
 		try {
 			connection();
 
-			String sql = "INSERT INTO ts_plant VALUES (TS_PLANT_SEQ.NEXTVAL, sysdate, ?, ?, ?)";
+			String sql = "INSERT INTO plant VALUES (TS_PLANT_SEQ.NEXTVAL, sysdate, ?, ?, ?)";
 
 			pst = conn.prepareStatement(sql);
 
@@ -83,7 +83,7 @@ public class PlantDAO {
 			
 			int set_mem_num = Integer.parseInt(mem_num);
 			
-			String sql = "SELECT DISTINCT p.pt_num, p.pt_comment, p.pt_plant FROM ts_plant p, ts_state WHERE p.pt_num=p.pt_num AND p.mem_num= ?";
+			String sql = "SELECT DISTINCT p.pt_num, p.pt_comment, p.pt_plant FROM ts_plant p, state WHERE p.pt_num=p.pt_num AND p.mem_num= ?";
 			pst = conn.prepareStatement(sql);
 
 			pst.setInt(1, set_mem_num);
