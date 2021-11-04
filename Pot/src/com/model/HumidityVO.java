@@ -2,7 +2,7 @@ package com.model;
 
 public class HumidityVO {
 	// ÇÊµå
-	private int mysensor;
+	int mysensor;
 	
 	public HumidityVO(int mysensor){
 		this.mysensor = mysensor;
