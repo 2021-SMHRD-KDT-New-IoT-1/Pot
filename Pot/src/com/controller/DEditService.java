@@ -18,12 +18,12 @@ public class DEditService extends HttpServlet {
 		
 		String title = request.getParameter("title");
 		String content = request.getParameter("content");
-		String getBo_num = request.getParameter("bo_num");
+		String getNum = request.getParameter("num");
 		
-		int bo_num = Integer.parseInt(getBo_num);
+		int num = Integer.parseInt(getNum);
 		
 		BoardDAO bdao = new BoardDAO();
-		int cnt = bdao.updateBoard(title, content, bo_num);
+		int cnt = bdao.updateBoard(title, content, num);
 		
 		if (cnt > 0) {
 			System.out.println("게시글 수정 성공");

@@ -28,6 +28,8 @@
 		
 		int bo_num = Integer.parseInt(get_bo_num);
 		int num = Integer.parseInt(get_num);
+		
+		System.out.println(bo_num + " " + num);
 	%>
 	<form action="DEditService" method="post">
 		<div class="board_wrap">
@@ -54,13 +56,12 @@
 						</dl>
 					</div>
 					<div class="cont">
-						<textarea name="content">
-						 <%=bList.get(bo_num).getContent() %>
+						<textarea name="content"><%=bList.get(bo_num).getContent() %>
 					</textarea>
 					</div>
 				</div>
 				<div class="bt_wrap">
-					<input type="hidden" value="<%=bo_num %>" name="bo_num"
+					<input type="hidden" value="<%=num %>" name="num"
 						id="mem_num" autocomplete="off" required>
 					<button id="btn" type="submit" class="on">수정</button> 
 					<a href="PlantDiaryMain.jsp">취소</a>
