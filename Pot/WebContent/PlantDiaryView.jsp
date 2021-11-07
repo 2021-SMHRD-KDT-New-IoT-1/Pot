@@ -1,3 +1,8 @@
+<%@page import="com.model.BoardVO"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="com.model.MemberVO"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -7,6 +12,19 @@
     <link rel="stylesheet" href="style(Plantdiary).css">
 </head>
 <body>
+	<%
+		request.setCharacterEncoding("UTF-8");
+	
+		MemberVO vo = (MemberVO)session.getAttribute("member");
+	
+		ArrayList<BoardVO> bList = (ArrayList)session.getAttribute("board");
+		
+		String get_bo_num = request.getParameter("bo_num");
+		String get_num = request.getParameter("num");
+		
+		int bo_num = Integer.parseInt(get_bo_num);
+		int num = Integer.parseInt(get_num);
+	%>
     <div class="board_wrap">
         <div class="board_title">
             <strong>식물일기</strong>
@@ -15,31 +33,29 @@
         <div class="board_view_wrap">
             <div class="board_view">
                 <div class="title">
-                    오늘도 너무 이쁜 가을이~
+                   <%=bList.get(bo_num).getTitle() %>
                 </div>
                 <div class="info">
                     <dl>
                         <dt>번호</dt>
-                        <dd>5</dd>
+                        <dd><%=num %></dd>
                     </dl>
                     <dl>
                         <dt>글쓴이</dt>
-                        <dd>장광수</dd>
+                        <dd><%=vo.getNick() %></dd>
                     </dl>
                     <dl>
                         <dt>작성일</dt>
-                        <dd>2021.11.3.</dd>
+                        <dd><%=bList.get(bo_num).getDate().substring(0, 10) %></dd>
                     </dl>
                 </div>
                 <div class="cont">
-                    가을이가 쑥쑥 크고 있다.<br>
-                    좋은일이 생기지는 않았지만<br>
-                    가을이만 봐도 너무 행복하다.
+                    <%=bList.get(bo_num).getContent() %>
                 </div>
             </div>
             <div class="bt_wrap">
                 <a href="PlantDiaryMain.jsp" class="on">목록</a>
-                <a href="edit(Plantdiary).html">수정</a>
+                <a href="PlantDiaryEdit.jsp?bo_num=<%=get_bo_num %>&num=<%=get_num %>">수정</a>
             </div>
         </div>
     </div>

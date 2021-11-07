@@ -83,7 +83,7 @@ public class PlantDAO {
 			
 			int set_mem_num = Integer.parseInt(mem_num);
 			
-			String sql = "SELECT DISTINCT p.pt_num, p.pt_comment, p.pt_plant FROM ts_plant p, state WHERE p.pt_num=p.pt_num AND p.mem_num= ?";
+			String sql = "SELECT DISTINCT p.pt_num, p.pt_comment, p.pt_plant FROM plant p, state WHERE p.pt_num=p.pt_num AND p.mem_num= ?";
 			pst = conn.prepareStatement(sql);
 
 			pst.setInt(1, set_mem_num);
@@ -112,7 +112,5 @@ public class PlantDAO {
 		}
 		return pal;
 	}
-	
-	// 03. 식물 습도 기능
 	
 }
