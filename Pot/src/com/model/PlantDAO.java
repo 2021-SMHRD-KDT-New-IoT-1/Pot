@@ -56,7 +56,7 @@ public class PlantDAO {
 		try {
 			connection();
 
-			String sql = "INSERT INTO plant VALUES (TS_PLANT_SEQ.NEXTVAL, sysdate, ?, ?, ?)";
+			String sql = "INSERT INTO plant VALUES (PLANT_SEQ.NEXTVAL, sysdate, ?, ?, ?)";
 
 			pst = conn.prepareStatement(sql);
 

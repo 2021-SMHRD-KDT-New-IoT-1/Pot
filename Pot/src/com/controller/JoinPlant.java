@@ -38,7 +38,7 @@ public class JoinPlant extends HttpServlet {
 
 		} else {
 			System.out.println("식물 등록 실패");
-			response.sendRedirect("main.jsp");
+			response.sendRedirect("Main.jsp");
 		}
 
 	}
